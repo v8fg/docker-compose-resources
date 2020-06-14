@@ -12,11 +12,11 @@ BASEDIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 
-.PHONY: default all golang golang-upx
+.PHONY: default all golang golang-upx node
 
-default: golang
+default: golang node
 
-all: golang golang-upx
+all: golang golang-upx node
 
 # golang build and push, default(latest)
 golang: golang-build golang-push
@@ -33,3 +33,9 @@ golang-build-upx:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest-upx
 golang-push-upx:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest-upx
+
+node: node-build node-push
+node-build:
+	bash ${docker_build_script} ${BASEDIR}/node/latest
+node-push:
+	bash ${docker_push_script} ${BASEDIR}/node/latest

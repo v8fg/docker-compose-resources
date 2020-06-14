@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  golang-latest:
+  golang:
     build: .
     container_name: golang-latest
     environment:

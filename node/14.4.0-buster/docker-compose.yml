@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  golang:
+  node:
     build: .
-    container_name: golang-1.14.4
+    container_name: node-14.4.0-buster
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/golang:1.14.4
+    image: v8fg/node:14.4.0-buster
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
