@@ -1,6 +1,14 @@
 # Docker Compose Resources
 
-## Project structure
+## Image List
+
+- [golang](./golang/README.md)
+- [kafka](./kafka/README.md)
+- [mysql](./mysql/README.md)
+- [nginx](./nginx/README.md)
+- [node](./node/README.md)
+
+## Project Structure
 
 ```text
 ┌── golang:                         golang related Dockerfile & docker-compose file
@@ -13,6 +21,7 @@
     |__ latest-upx:                 golang latest version with upx
     |__ docker-run.sh:              script for run the special version docker image
     |__ Makefile:                   use command make to build, push and run docker images for golang
+|___xxx:                            xxx  related Dockerfile & docker-compose file
 |__ scripts:                        common scripts
     |__ docker-build.sh:            docker image build script
     |__ docker-push.sh:             docker image push script

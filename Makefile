@@ -12,11 +12,11 @@ BASEDIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 
-.PHONY: default all golang golang-upx node
+.PHONY: default all golang golang-upx kafka mysql nginx node
 
-default: golang node
+default: golang kafka mysql nginx node
 
-all: golang golang-upx node
+all: golang golang-upx kafka mysql nginx node 
 
 # golang build and push, default(latest)
 golang: golang-build golang-push
@@ -33,6 +33,24 @@ golang-build-upx:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest-upx
 golang-push-upx:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest-upx
+
+kafka: kafka-build kafka-push
+kafka-build:
+	bash ${docker_build_script} ${BASEDIR}/kafka/latest
+kafka-push:
+	bash ${docker_push_script} ${BASEDIR}/kafka/latest
+
+mysql: mysql-build mysql-push
+mysql-build:
+	bash ${docker_build_script} ${BASEDIR}/mysql/latest
+mysql-push:
+	bash ${docker_push_script} ${BASEDIR}/mysql/latest
+
+nginx: nginx-build nginx-push
+nginx-build:
+	bash ${docker_build_script} ${BASEDIR}/nginx/latest
+nginx-push:
+	bash ${docker_push_script} ${BASEDIR}/nginx/latest
 
 node: node-build node-push
 node-build:
