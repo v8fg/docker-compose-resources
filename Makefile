@@ -12,11 +12,11 @@ BASEDIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 
-.PHONY: default all golang golang-upx kafka mysql nginx node
+.PHONY: default all golang golang-upx kafka mysql nginx node openjdk
 
-default: golang kafka mysql nginx node
+default: golang kafka mysql nginx node openjdk
 
-all: golang golang-upx kafka mysql nginx node 
+all: golang golang-upx kafka mysql nginx node openjdk
 
 # golang build and push, default(latest)
 golang: golang-build golang-push
@@ -57,3 +57,9 @@ node-build:
 	bash ${docker_build_script} ${BASEDIR}/node/latest
 node-push:
 	bash ${docker_push_script} ${BASEDIR}/node/latest
+
+openjdk: openjdk-build openjdk-push
+openjdk-build:
+	bash ${docker_build_script} ${BASEDIR}/openjdk/latest
+openjdk-push:
+	bash ${docker_push_script} ${BASEDIR}/openjdk/latest

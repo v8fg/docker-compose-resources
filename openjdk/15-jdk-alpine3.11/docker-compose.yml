@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  openjdk:
+    build: .
+    container_name: openjdk-15-jdk-alpine3.11
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/openjdk:15-jdk-alpine3.11
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]

@@ -7,6 +7,7 @@
 - [mysql](./mysql/README.md)
 - [nginx](./nginx/README.md)
 - [node](./node/README.md)
+- [openjdk](./openjdk/README.md)
 
 ## Project Structure
 

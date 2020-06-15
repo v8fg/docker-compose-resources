@@ -20,6 +20,6 @@ if [[ ! -f ${DockerVersionfile} ]]; then
     exit 1
 fi
 
-echo_green "tag: ${tag_name}"
+echo_green "push image with tag: ${tag_name}"
 
 docker push "${tag_name}"

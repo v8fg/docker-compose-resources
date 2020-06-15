@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  openjdk:
+    build: .
+    container_name: openjdk-8u252-jre
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/openjdk:8u252-jre
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
