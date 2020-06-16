@@ -6,6 +6,7 @@
 - [golang](./golang/README.md)
 - [kafka](./kafka/README.md)
 - [mysql](./mysql/README.md)
+- [nexus3](./nexus3/README.md)
 - [nginx](./nginx/README.md)
 - [node](./node/README.md)
 - [openjdk](./openjdk/README.md)

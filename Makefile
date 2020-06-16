@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all alpine golang golang-upx kafka mysql nginx node openjdk
+.PHONY: default all alpine golang golang-upx kafka mysql nexus3 nginx node openjdk
 
-default: alpine golang kafka mysql nginx node openjdk clean
+default: alpine golang kafka mysql nexus3 nginx node openjdk clean
 
-all: alpine golang golang-upx kafka mysql nginx node openjdk clean
+all: alpine golang golang-upx kafka mysql nexus3 nginx node openjdk clean
 
 clean:
 	bash ${docker_clean_script}
@@ -58,6 +58,12 @@ mysql-build:
 	bash ${docker_build_script} ${BASEDIR}/mysql/latest
 mysql-push:
 	bash ${docker_push_script} ${BASEDIR}/mysql/latest
+
+nexus3: nexus3-build nexus3-push
+nexus3-build:
+	bash ${docker_build_script} ${BASEDIR}/nexus3/latest
+nexus3-push:
+	bash ${docker_push_script} ${BASEDIR}/nexus3/latest
 
 nginx: nginx-build nginx-push
 nginx-build:
