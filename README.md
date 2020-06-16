@@ -10,6 +10,7 @@
 - [nginx](./nginx/README.md)
 - [node](./node/README.md)
 - [openjdk](./openjdk/README.md)
+- [redis](./redis/README.md)
 
 ## Usage
 
