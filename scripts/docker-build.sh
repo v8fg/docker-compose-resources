@@ -27,6 +27,6 @@ fi
 
 source ${DockerVersionfile}
  
-echo_green "build image with tag: ${tag_name}"
+echo_green "build image: ${LOCATION}"
 
-docker build -t "${tag_name}"  -f ${Dockerfile} ${BASE_PATH}
+docker build -t "${LOCATION}"  -f ${Dockerfile} ${BASE_PATH}

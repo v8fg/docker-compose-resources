@@ -2,11 +2,16 @@ version: '3.7'
 services:
   nginx:
     build: .
-    container_name: nginx-1.19.0
+    container_name: nginx-latest
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/nginx:1.19.0
+      # NGINX_HOST: foobar.com
+      NGINX_PORT: 8080
+    image: v8fg/nginx:latest
     stdin_open: true
-    tty: true 
+    tty: true
+    volumes: 
+      - ./data/nginx.conf:/etc/nginx/nginx.conf:ro
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
-    command: [ "/bin/bash"]
+    # command: [ "/bin/bash"]
+    command: [nginx-debug, '-g', 'daemon off;']

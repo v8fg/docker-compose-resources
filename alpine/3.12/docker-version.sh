@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=2.12-2.5.0
+TAG=3.12
 USER=v8fg
-NAME=kafka
+NAME=alpine
 
 REPOSITORY=${USER}/${NAME}
 # image with tag, use to push image

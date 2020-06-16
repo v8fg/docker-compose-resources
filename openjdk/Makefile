@@ -11,7 +11,7 @@ BASEDIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
-docker_run_script=${BASEDIR}/docker-run.sh
+docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
 .PHONY: default all latest 8u212-jdk-alpine3.9 8u212-jre-alpine3.9 8u252-jdk 8u252-jdk-slim-buster \
 	8u252-jre 8u252-jre-slim-buster 15-jdk-alpine3.11 15-jdk-buster 15-jdk-oracle 15-jdk-slim-buster

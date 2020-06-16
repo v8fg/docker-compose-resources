@@ -5,8 +5,19 @@ services:
     container_name: mysql-latest
     environment:
       TZ: Asia/Shanghai
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
     image: v8fg/mysql:latest
     stdin_open: true
     tty: true 
+    volumes: 
+      - ./data/conf.d:/etc/mysql/conf.d
+      - ./data/my.cnf:/etc/mysql/my.cnf
+      - ./data/data_dir:/var/lib/mysql
+    ports: 
+      - 3306:3306
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
-    command: [ "/bin/bash"]
+    # command: [ "/bin/bash"]
+    command: --default-authentication-plugin=mysql_native_password

@@ -5,8 +5,18 @@ services:
     container_name: mysql-8.0.20
     environment:
       TZ: Asia/Shanghai
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
     image: v8fg/mysql:8.0.20
     stdin_open: true
-    tty: true 
+    tty: true
+    volumes:
+      - ./data/conf.d:/etc/mysql/conf.d
+      - ./data/my.cnf:/etc/mysql/my.cnf
+      - ./data/data_dir:/var/lib/mysql
+    ports:
+      - 3306:3306
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
     command: [ "/bin/bash"]

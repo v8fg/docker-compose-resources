@@ -11,23 +11,36 @@ BASEDIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
+docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all golang golang-upx kafka mysql nginx node openjdk
+.PHONY: default all alpine golang golang-upx kafka mysql nginx node openjdk
 
-default: golang kafka mysql nginx node openjdk
+default: alpine golang kafka mysql nginx node openjdk clean
 
-all: golang golang-upx kafka mysql nginx node openjdk
+all: alpine golang golang-upx kafka mysql nginx node openjdk clean
+
+clean:
+	bash ${docker_clean_script}
+
+clean-force:
+	bash ${docker_clean_script} force
+
+alpine: alpine-build alpine-push
+alpine-build:
+	bash ${docker_build_script} ${BASEDIR}/alpine/latest
+alpine-push:
+	bash ${docker_push_script} ${BASEDIR}/alpine/latest
 
 # golang build and push, default(latest)
 golang: golang-build golang-push
-# golang build and push with upx, default(latest)
-golang-upx: golang-build-upx golang-push-upx
-
 # golang build and push, latest
 golang-build:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest
 golang-push:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest
+
+# golang build and push with upx, default(latest)
+golang-upx: golang-build-upx golang-push-upx
 # golang build and push with upx, latest
 golang-build-upx:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest-upx

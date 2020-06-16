@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  openjdk:
+  alpine:
     build: .
-    container_name: openjdk-latest
+    container_name: alpine-3.12
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/openjdk:latest
+    image: v8fg/alpine:3.12
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped

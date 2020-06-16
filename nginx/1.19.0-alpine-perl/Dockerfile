@@ -5,3 +5,5 @@ LABEL maintainer="278810732@qq.com" github="https://github.com/xwi88" group="htt
 RUN apk add --no-cache tzdata bash
 
 ENV TZ=Asia/Shanghai
+
+EXPOSE 80

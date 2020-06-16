@@ -11,7 +11,7 @@ BASEDIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
-docker_run_script=${BASEDIR}/docker-run.sh
+docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
 .PHONY: default all latest 1.19.0 1.19.0-alpine 1.19.0-alpine-perl 1.19.0-perl
 

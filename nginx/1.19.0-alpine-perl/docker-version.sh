@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-tag_version=1.19.0-alpine-perl
-domain=v8fg
-name=nginx
-image_repo=${domain}/${name}
-tag_name=${image_repo}:${tag_version}
+TAG=1.19.0-alpine-perl
+USER=v8fg
+NAME=nginx
+
+REPOSITORY=${USER}/${NAME}
+# image with tag, use to push image
+LOCATION=${REPOSITORY}:${TAG}
+
+# use to build container
+CONTAINER_NAME=${USER}-${NAME}-${TAG}

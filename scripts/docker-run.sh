@@ -8,9 +8,8 @@ if [[ ! -f ${DockerVersionfile} ]]; then
     exit 1
 fi
 
-
 source ${DockerVersionfile}
-echo -e "docker tag:${tag_name}"
+echo -e "run image: ${LOCATION}"
 
 # docker volume need the absolute path
-docker run -it --name ${domain}-${name}-${tag_version} --rm ${tag_name}
+docker run ${DAEMON} -it --name ${CONTAINER_NAME} ${PORT} ${ENV} --rm ${LOCATION}
