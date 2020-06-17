@@ -2,8 +2,8 @@ version: '3.8'
 services:
   nexus3:
     build: .
-    container_name: nexus3-latest
-    image: v8fg/nexus3:latest
+    container_name: nexus3-3.23.0
+    image: v8fg/nexus3:3.23.0
     privileged: true
     init: true
     env_file:
@@ -17,8 +17,8 @@ services:
       - "19092:9092"  # docker(hosted)私有仓库，pull & push
     volumes:
       - ./nexus-data:/nexus-data
-    # stdin_open: true
-    # tty: true
+    stdin_open: true
+    tty: true
     logging:
       driver: "json-file"
       options:
