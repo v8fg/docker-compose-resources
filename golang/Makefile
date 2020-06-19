@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest latest-upx 1.14.4 1.14.4-upx 
+.PHONY: default all latest latest-upx 1.14.4 1.14.4-librdkafka 1.14.4-upx
 
 default: latest latest-upx
 
-all: latest latest-upx 1.14.4 1.14.4-upx
+all: latest latest-upx 1.14.4 1.14.4-librdkafka 1.14.4-upx
 
 # latest build and push
 latest: build push
@@ -59,6 +59,15 @@ push-1.14.4:
 	bash ${docker_push_script} ${BASEDIR}/1.14.4
 run-1.14.4:
 	bash ${docker_run_script} ${BASEDIR}/1.14.4
+
+# version 1.14.4-librdkafka
+1.14.4-librdkafka: build-1.14.4-librdkafka push-1.14.4-librdkafka
+build-1.14.4-librdkafka:
+	bash ${docker_build_script} ${BASEDIR}/1.14.4-librdkafka
+push-1.14.4-librdkafka:
+	bash ${docker_push_script} ${BASEDIR}/1.14.4-librdkafka
+run-1.14.4-librdkafka:
+	bash ${docker_run_script} ${BASEDIR}/1.14.4-librdkafka
 
 # version 1.14.4 with upx
 1.14.4-upx: build-1.14.4-upx push-1.14.4-upx
