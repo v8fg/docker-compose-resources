@@ -72,3 +72,12 @@ sudo cp docker/* /usr/bin/
 - Environment file
 - Dockerfile
 - Variable is not defined
+
+## mirrors site
+
+- [tuna](https://mirrors.tuna.tsinghua.edu.cn)
+- [bfsu](https://mirrors.bfsu.edu.cn/)
+- [ustc](http://mirrors.ustc.edu.cn/)
+- [aliyun](http://mirrors.aliyun.com/)
+- [163](http://mirrors.163.com/)
+- [zju](http://mirrors.zju.edu.cn/)
