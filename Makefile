@@ -13,13 +13,15 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all alpine golang golang-upx grafana kafka mysql nexus3 nginx node openjdk redis
+.PHONY: default all alpine gitlab-ce gitlab-runner gitlab-sameersbn golang golang-upx kafka mysql nexus3 \
+	nginx node openjdk postgres redis
 
-.PHONY: default all alpine golang golang-upx grafana kafka mysql nexus3 nginx node openjdk redis
+.PHONY: default all alpine gitlab-ce gitlab-runner gitlab-sameersbn golang golang-upx kafka mysql nexus3 \
+	nginx node openjdk postgres redis
+	
+default: clean alpine gitlab-ce gitlab-runner gitlab-sameersbn golang kafka mysql nexus3 nginx node openjdk postgres redis
 
-default: clean alpine golang grafana kafka mysql nexus3 nginx node openjdk redis
-
-all: clean alpine golang golang-upx grafana kafka mysql nexus3 nginx node openjdk redis
+all: clean alpine golang golang-upx gitlab-ce gitlab-runner gitlab-sameersbn kafka mysql nexus3 nginx node openjdk postgres redis
 
 clean:
 	bash ${docker_clean_script}
@@ -32,6 +34,24 @@ alpine-build:
 	bash ${docker_build_script} ${BASEDIR}/alpine/latest
 alpine-push:
 	bash ${docker_push_script} ${BASEDIR}/alpine/latest
+
+gitlab-ce: gitlab-ce-build gitlab-ce-push
+gitlab-ce-build:
+	bash ${docker_build_script} ${BASEDIR}/gitlab/gitlab-ce/latest
+gitlab-ce-push:
+	bash ${docker_push_script} ${BASEDIR}/gitlab/gitlab-ce/latest
+
+gitlab-runner: gitlab-runner-build gitlab-runner-push
+gitlab-runner-build:
+	bash ${docker_build_script} ${BASEDIR}/gitlab/gitlab-runner/latest
+gitlab-runner-push:
+	bash ${docker_push_script} ${BASEDIR}/gitlab/gitlab-runner/latest
+
+gitlab-sameersbn: gitlab-sameersbn-build gitlab-sameersbn-push
+gitlab-sameersbn-build:
+	bash ${docker_build_script} ${BASEDIR}/gitlab/gitlab-sameersbn/latest
+gitlab-sameersbn-push:
+	bash ${docker_push_script} ${BASEDIR}/gitlab/gitlab-sameersbn/latest
 
 # golang build and push, default(latest)
 golang: golang-build golang-push
@@ -48,14 +68,6 @@ golang-build-upx:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest-upx
 golang-push-upx:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest-upx
-
-# grafana build and push, default(latest)
-grafana: grafana-build grafana-push
-# grafana build and push, latest
-grafana-build:
-	bash ${docker_build_script} ${BASEDIR}/grafana/latest
-grafana-push:
-	bash ${docker_push_script} ${BASEDIR}/grafana/latest
 
 kafka: kafka-build kafka-push
 kafka-build:
@@ -92,6 +104,12 @@ openjdk-build:
 	bash ${docker_build_script} ${BASEDIR}/openjdk/latest
 openjdk-push:
 	bash ${docker_push_script} ${BASEDIR}/openjdk/latest
+
+postgres: postgres-build postgres-push
+postgres-build:
+	bash ${docker_build_script} ${BASEDIR}/postgres/latest
+postgres-push:
+	bash ${docker_push_script} ${BASEDIR}/postgres/latest
 
 redis: redis-build redis-push
 redis-build:

@@ -13,7 +13,7 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest latest 7.0.3 7.0.3-ubuntu 6.7.4 6.7.4-ubuntu
+.PHONY: default all latest 7.0.3 7.0.3-ubuntu 6.7.4 6.7.4-ubuntu
 
 default: latest 7.0.3 6.7.4
 

@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  postgres:
+    build: .
+    container_name: postgres-13-alpine
+    environment:
+      TZ: Asia/Shanghai
+      POSTGRES_PASSWORD: ps123456
+    image: v8fg/postgres:13-alpine
+    stdin_open: true
+    tty: true 
+    volumes:
+      - $PWD/data/postgresql/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: 'always' # no|on-failure[:max-retries]|always|unless-stopped

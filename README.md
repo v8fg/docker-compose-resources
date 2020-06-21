@@ -3,6 +3,7 @@
 ## Image List
 
 - [alpine](./alpine/README.md)
+- [gitlab](./gitlab/README.md)
 - [golang](./golang/README.md)
 - [kafka](./kafka/README.md)
 - [mysql](./mysql/README.md)
@@ -10,6 +11,7 @@
 - [nginx](./nginx/README.md)
 - [node](./node/README.md)
 - [openjdk](./openjdk/README.md)
+- [postgres](./postgres/README.md)
 - [redis](./redis/README.md)
 
 ## Usage
