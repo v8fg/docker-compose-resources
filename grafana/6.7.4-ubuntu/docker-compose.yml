@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  grafana:
+    build: .
+    container_name: v8fg-grafana-6.7.4-ubuntu
+    image: v8fg/grafana:6.7.4-ubuntu
+    privileged: true
+    init: true
+    # environment: 
+      # - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3000:3000"
+    volumes:
+      - $PWD/conf/grafana.ini:/etc/grafana/grafana.ini
+      - $PWD/data/grafana/log:/var/log/grafana
+      # - /data/grafana/data:/var/lib/grafana # permissions issues
+      # - /data/grafana/plugins:/var/lib/grafana/plugins
+    command: -config /etc/grafana/grafana.ini
+    restart: always

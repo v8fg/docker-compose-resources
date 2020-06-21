@@ -13,11 +13,13 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all alpine golang golang-upx kafka mysql nexus3 nginx node openjdk redis
+.PHONY: default all alpine golang golang-upx grafana kafka mysql nexus3 nginx node openjdk redis
 
-default: clean alpine golang kafka mysql nexus3 nginx node openjdk redis
+.PHONY: default all alpine golang golang-upx grafana kafka mysql nexus3 nginx node openjdk redis
 
-all: clean alpine golang golang-upx kafka mysql nexus3 nginx node openjdk redis
+default: clean alpine golang grafana kafka mysql nexus3 nginx node openjdk redis
+
+all: clean alpine golang golang-upx grafana kafka mysql nexus3 nginx node openjdk redis
 
 clean:
 	bash ${docker_clean_script}
@@ -46,6 +48,14 @@ golang-build-upx:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest-upx
 golang-push-upx:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest-upx
+
+# grafana build and push, default(latest)
+grafana: grafana-build grafana-push
+# grafana build and push, latest
+grafana-build:
+	bash ${docker_build_script} ${BASEDIR}/grafana/latest
+grafana-push:
+	bash ${docker_push_script} ${BASEDIR}/grafana/latest
 
 kafka: kafka-build kafka-push
 kafka-build:
