@@ -7,6 +7,10 @@
 - [x] [1.14.4](./1.14.4/Dockerfile)
 - [x] [1.14.4-librdkafka](./1.14.4-librdkafka/Dockerfile)
 - [x] [1.14.4-upx]((./1.14.4-upx/Dockerfile))
+- [x] [1.14.12](./1.14.12/Dockerfile)
+- [x] [1.14.12-upx]((./1.14.12-upx/Dockerfile))
+- [x] [1.15.5](./1.15.5/Dockerfile)
+- [x] [1.15.5-upx]((./1.15.5-upx/Dockerfile))
 
 ## Scripts
 
