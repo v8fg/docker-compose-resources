@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest 6.0.5-alpine 6.0.5-alpine3.12 6.0.5-buster
+.PHONY: default all latest 6.0.5-alpine 6.0.5-alpine3.12 6.0.5-buster 6.0.10-alpine3.12
 
 default: latest
 
-all: latest 6.0.5-alpine 6.0.5-alpine3.12 6.0.5-buster
+all: latest 6.0.5-alpine 6.0.5-alpine3.12 6.0.5-buster 6.0.10-alpine3.12
 
 # latest build and push
 latest: build push
@@ -61,3 +61,12 @@ push-6.0.5-buster:
 	bash ${docker_push_script} ${BASEDIR}/6.0.5-buster
 run-6.0.5-buster:
 	bash ${docker_run_script} ${BASEDIR}/6.0.5-buster
+
+# version 6.0.10-alpine3.12
+6.0.10-alpine3.12: build-6.0.10-alpine3.12 push-6.0.10-alpine3.12
+build-6.0.10-alpine3.12:
+	bash ${docker_build_script} ${BASEDIR}/6.0.10-alpine3.12
+push-6.0.10-alpine3.12:
+	bash ${docker_push_script} ${BASEDIR}/6.0.10-alpine3.12
+run-6.0.10-alpine3.12:
+	bash ${docker_run_script} ${BASEDIR}/6.0.10-alpine3.12

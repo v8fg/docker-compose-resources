@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest 3.23.0 3.24.0
+.PHONY: default all latest 3.23.0 3.24.0 3.29.2
 
 default: latest
 
-all: latest 3.23.0 3.24.0
+all: latest 3.23.0 3.24.0 3.29.2
 
 # latest build and push
 latest: build push
@@ -52,3 +52,12 @@ push-3.24.0:
 	bash ${docker_push_script} ${BASEDIR}/3.24.0
 run-3.24.0:
 	bash ${docker_run_script} ${BASEDIR}/3.24.0
+
+# version 3.29.2
+3.29.2: build-3.29.2 push-3.29.2
+build-3.29.2:
+	bash ${docker_build_script} ${BASEDIR}/3.29.2
+push-3.29.2:
+	bash ${docker_push_script} ${BASEDIR}/3.29.2
+run-3.29.2:
+	bash ${docker_run_script} ${BASEDIR}/3.29.2
