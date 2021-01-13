@@ -2,8 +2,13 @@ version: '3.8'
 services:
   nexus3:
     build: .
+<<<<<<< HEAD
     container_name: nexus3-3.24.0
     image: v8fg/nexus3:3.24.0
+=======
+    container_name: nexus3-3.29.2
+    image: v8fg/nexus3:3.29.2
+>>>>>>> cb4ae06 (update redis & nexus3)
     # privileged: true
     init: true
     env_file:
