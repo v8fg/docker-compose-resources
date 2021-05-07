@@ -13,13 +13,13 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all gitlab-ce-latest gitlab-ce-nightly \
+.PHONY: default all gitlab-ce-latest gitlab-ce-nightly gitlab-ce-13.11.3 \
 	gitlab-runner-alpine-bleedding gitlab-runner-latest \
 	gitlab-sameersbn-13.0.06 gitlab-sameersbn-latest
 
 default: gitlab-ce-latest gitlab-runner-latest gitlab-sameersbn-latest
 
-all: latest gitlab-ce-latest gitlab-ce-nightly \
+all: gitlab-ce-latest gitlab-ce-nightly gitlab-ce-13.11.3 \
 	gitlab-runner-alpine-bleedding gitlab-runner-latest \
 	gitlab-sameersbn-13.0.06 gitlab-sameersbn-latest
 
@@ -49,6 +49,14 @@ push-gitlab-ce-nightly:
 run-gitlab-ce-nightly:
 	bash ${docker_run_script} ${BASEDIR}/gitlab-ce/nightly
 
+gitlab-ce-13.11.3: build-gitlab-ce-13.11.3 push-gitlab-ce-13.11.3
+# version latest gitlab-ce-13.11.3
+build-gitlab-ce-13.11.3:
+	bash ${docker_build_script} ${BASEDIR}/gitlab-ce/13.11.3
+push-gitlab-ce-13.11.3:
+	bash ${docker_push_script} ${BASEDIR}/gitlab-ce/13.11.3
+run-gitlab-ce-13.11.3:
+	bash ${docker_run_script} ${BASEDIR}/gitlab-ce/13.11.3
 
 # latest build and push gitlab-runner
 gitlab-runner-latest: build-gitlab-runner push-gitlab-runner

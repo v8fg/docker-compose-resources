@@ -8,6 +8,7 @@
 
 - [x] [latest](./gitlab-ce/latest/Dockerfile)
 - [x] [nightly](./gitlab-ce/nightly/Dockerfile)
+- [x] [13.11.3](./gitlab-ce/13.11.3/Dockerfile)
 
 ### runner
 

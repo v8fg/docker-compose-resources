@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=nightly
+TAG=13.11.3
 USER=v8fg
 NAME=gitlab-ce
 
@@ -11,3 +11,10 @@ LOCATION=${REPOSITORY}:${TAG}
 
 # use to build container
 CONTAINER_NAME=${USER}-${NAME}-${TAG}
+
+# ARGS ...
+
+# DAEMON="-d"
+# ENV=""
+PORT="-p 6622:22 -P 6680:80 6643:43"
+
