@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  nginx:
+    build: .
+    container_name: nginx-1.20.0-alpine
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/nginx:1.20.0-alpine
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]

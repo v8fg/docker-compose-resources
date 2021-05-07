@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=1.19.0-alpine-perl
+TAG=1.20.0-alpine-perl
 USER=v8fg
 NAME=nginx
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=1.19.0-alpine
+TAG=1.16.4
 USER=v8fg
-NAME=nginx
+NAME=golang
 
 REPOSITORY=${USER}/${NAME}
 # image with tag, use to push image

@@ -1,9 +1,7 @@
-FROM nginx:1.19.0-alpine-perl
+FROM golang:1.16.4-alpine3.13
 
 LABEL maintainer="278810732@qq.com" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
-RUN apk add --no-cache tzdata bash
+RUN apk add --no-cache tzdata git make bash
 
 ENV TZ=Asia/Shanghai
-
-EXPOSE 80
