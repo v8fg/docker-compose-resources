@@ -3,6 +3,8 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
+- [x] [2.291-alpine](./2.291-alpine/Dockerfile)
+- [x] [2.291-centos7](./2.291-centos7/Dockerfile)
 - [x] [2.243-alpine](./2.243-alpine/Dockerfile)
 - [x] [2.243-centos7](./2.243-centos7/Dockerfile)
 
