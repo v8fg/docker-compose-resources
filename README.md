@@ -5,6 +5,8 @@
 - [alpine](./alpine/README.md)
 - [gitlab](./gitlab/README.md)
 - [golang](./golang/README.md)
+- [grafana](./grafana/README.md)
+- [jenkins](./jenkins/README.md)
 - [kafka](./kafka/README.md)
 - [mysql](./mysql/README.md)
 - [nexus3](./nexus3/README.md)
