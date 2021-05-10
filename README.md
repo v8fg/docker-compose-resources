@@ -13,6 +13,7 @@
 - [openjdk](./openjdk/README.md)
 - [postgres](./postgres/README.md)
 - [redis](./redis/README.md)
+- [rust](./rust/README.md)
 
 ## Usage
 
