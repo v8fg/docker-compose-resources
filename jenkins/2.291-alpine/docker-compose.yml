@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  jenkins:
+    build: .
+    container_name: v8fg-jenkins
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/jenkins:2.291-alpine
+    ports:
+      - "8080:8080" 
+      - "50000:50000"
+    volumes:
+      - $PWD/data/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/bin/docker
+      # - /usr/local/bin/go:/usr/bin/go
+      # - /usr/local/bin/git:/usr/bin/git
+      # - $(which docker):/usr/bin/docker
+      # - $(which go):/usr/bin/go
+      # - $(which git):/usr/bin/git
+      - ~/.ssh:/var/jenkins_home/.ssh
+    stdin_open: true
+    tty: true 
+    restart: 'always' # no|on-failure[:max-retries]|always|unless-stopped
