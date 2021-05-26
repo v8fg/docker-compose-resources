@@ -16,6 +16,7 @@
 - [postgres](./postgres/README.md)
 - [redis](./redis/README.md)
 - [rust](./rust/README.md)
+- [ubuntu](./ubuntu/README.md)
 
 ## Usage
 

@@ -1,0 +1,33 @@
+FROM ubuntu:16.04
+
+LABEL maintainer="278810732@qq.com" github="https://github.com/xwi88" group="https://github.com/v8fg"
+
+# bak
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
+
+# replace sources.list
+COPY configs/sources-16.list /etc/apt/sources.list
+
+RUN apt-get update
+
+RUN apt-get install -y bash make git wget
+
+RUN git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# RUN wget https://golang.org/doc/install?download=go1.16.4.linux-amd64.tar.gz
+RUN wget http://qtg5a7g51.hb-bkt.clouddn.com/go1.16.4.linux-amd64.tar.gz
+
+
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
+RUN rm go1.16.4.linux-amd64.tar.gz
+ENV PATH=$PATH:/usr/local/go/bin
+
+# local
+# ENV GOPROXY=http://10.14.41.67:8081/repository/go-group/,https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://gocenter.io/,https://proxy.golang.org,direct
+
+# public
+ENV GOPROXY=https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://gocenter.io/,https://proxy.golang.org,direct
+
+RUN go version
+
+ENV TZ=Asia/Shanghai
