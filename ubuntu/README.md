@@ -7,6 +7,7 @@
 - [x] [16.04-go1.16](./16.04-go1.16/Dockerfile)
 - [x] [16.04-go1.16-tf-cpu](./16.04-go1.16-tf-cpu/Dockerfile)
 - [x] [16.04-go1.16-upx](./16.04-go1.16-upx/Dockerfile)
+- [x] [16.04-tf-cpu](./16.04-tf-cpu/Dockerfile)
 
 ## Scripts
 
