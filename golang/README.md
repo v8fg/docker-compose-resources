@@ -4,6 +4,10 @@
 
 - [x] [latest](./latest/Dockerfile)
 - [x] [latest-upx](./latest-upx/Dockerfile)
+- [x] [1.16](./1.16/Dockerfile)
+- [x] [1.16-upx]((./1.16-upx/Dockerfile))
+- [x] [1.16.5](./1.16.5/Dockerfile)
+- [x] [1.16.5-upx]((./1.16.5-upx/Dockerfile))
 - [x] [1.16.4](./1.16.4/Dockerfile)
 - [x] [1.16.4-upx]((./1.16.4-upx/Dockerfile))
 - [x] [1.16.4-librdkafka](./1.16.4-librdkafka/Dockerfile)
