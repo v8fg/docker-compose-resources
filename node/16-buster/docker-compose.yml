@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  node:
+    build: .
+    container_name: node-16-buster
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/node:16-buster
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]

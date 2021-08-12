@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  redis:
+    build: .
+    container_name: redis-6.2-alpine3.14
+    image: v8fg/redis:6.2-alpine3.14
+    command: ["redis-server", "--appendonly", "yes"]
+    # hostname: redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data/redis:/data
+      - ./conf/redis.conf:/etc/redis.conf

@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  centos:
+    build: .
+    container_name: centos-8
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/centos:8
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
