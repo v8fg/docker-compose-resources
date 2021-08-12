@@ -15,13 +15,13 @@ docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
 .PHONY: default all gitlab-ce-latest gitlab-ce-nightly gitlab-ce-13.11.3 \
 	gitlab-runner-alpine-bleedding gitlab-runner-latest \
-	gitlab-sameersbn-13.0.06 gitlab-sameersbn-latest
+	gitlab-sameersbn-latest gitlab-sameersbn-13.12.2 gitlab-sameersbn-13.0.06
 
 default: gitlab-ce-latest gitlab-runner-latest gitlab-sameersbn-latest
 
 all: gitlab-ce-latest gitlab-ce-nightly gitlab-ce-13.11.3 \
 	gitlab-runner-alpine-bleedding gitlab-runner-latest \
-	gitlab-sameersbn-13.0.06 gitlab-sameersbn-latest
+	gitlab-sameersbn-latest gitlab-sameersbn-13.12.2 gitlab-sameersbn-13.0.06 
 
 # latest build and push gitlab-ce
 gitlab-ce-latest: build-gitlab-ce push-gitlab-ce
@@ -99,6 +99,15 @@ push-gitlab-sameersbn-latest:
 	bash ${docker_push_script} ${BASEDIR}/gitlab-sameersbn/latest
 run-gitlab-sameersbn-latest:
 	bash ${docker_run_script} ${BASEDIR}/gitlab-sameersbn/latest
+
+gitlab-sameersbn-13.12.2: build-gitlab-sameersbn-13.12.2 push-gitlab-sameersbn-13.12.2
+# version 13.12.2 gitlab-sameersbn
+build-gitlab-sameersbn-13.12.2:
+	bash ${docker_build_script} ${BASEDIR}/gitlab-sameersbn/13.12.2
+push-gitlab-sameersbn-13.12.2:
+	bash ${docker_push_script} ${BASEDIR}/gitlab-sameersbn/13.12.2
+run-gitlab-sameersbn-13.12.2:
+	bash ${docker_run_script} ${BASEDIR}/gitlab-sameersbn/13.12.2
 
 gitlab-sameersbn-13.0.6: build-gitlab-sameersbn-13.0.6 push-gitlab-sameersbn-13.0.6
 # version 13.0.6 gitlab-sameersbn

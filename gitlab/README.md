@@ -18,6 +18,7 @@
 ### sameersbn
 
 - [x] [latest](./gitlab-sameersbn/latest/Dockerfile)
+- [x] [13.12.2](./gitlab-sameersbn/13.12.2/Dockerfile)
 - [x] [13.0.6](./gitlab-sameersbn/13.0.6/Dockerfile)
 
 ## Scripts
