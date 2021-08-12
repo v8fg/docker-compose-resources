@@ -3,6 +3,10 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
+- [x] [1.21.1](./1.21.1/Dockerfile)
+- [x] [1.21.1-alpine](./1.21.1-alpine/Dockerfile)
+- [x] [1.21.1-alpine-perl](./1.21.1-alpine-perl/Dockerfile)
+- [x] [1.21.1-perl](./1.21.1-perl/Dockerfile)
 - [x] [1.20.0](./1.20.0/Dockerfile)
 - [x] [1.20.0-alpine](./1.20.0-alpine/Dockerfile)
 - [x] [1.20.0-alpine-perl](./1.20.0-alpine-perl/Dockerfile)

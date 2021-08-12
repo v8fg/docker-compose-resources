@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  alpine:
+    build: .
+    container_name: alpine-3.14
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/alpine:3.14
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
