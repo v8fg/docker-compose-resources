@@ -13,13 +13,13 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest latest-upx 1.16.7 1.16.7-upx 1.16.5 1.16.5-upx 1.16.4 1.16.4-upx 1.16.4-librdkafka 1.16 1.16-upx \
+.PHONY: default all latest latest-upx 1.17 1.17-upx 1.16.7 1.16.7-upx 1.16.5 1.16.5-upx 1.16.4 1.16.4-upx 1.16.4-librdkafka 1.16 1.16-upx \
 	1.15.5 1.15.5-upx 1.15.6-librdkafka 1.14.12 1.14.12-upx 1.14.4 1.14.4-upx
 	
 
 default: latest latest-upx
 
-all: latest latest-upx 1.16.7 1.16.7-upx 1.16.5 1.16.5-upx 1.16.4 1.16.4-upx 1.16.4-librdkafka 1.16 1.16-upx 1.15.5 1.15.5-upx 1.15.6-librdkafka 1.14.12 1.14.12-upx 1.14.4 1.14.4-upx
+all: latest latest-upx 1.17 1.17-upx 1.16.7 1.16.7-upx 1.16.5 1.16.5-upx 1.16.4 1.16.4-upx 1.16.4-librdkafka 1.16 1.16-upx 1.15.5 1.15.5-upx 1.15.6-librdkafka 1.14.12 1.14.12-upx 1.14.4 1.14.4-upx
 
 # latest build and push
 latest: build push
@@ -52,6 +52,24 @@ push-latest-upx:
 	bash ${docker_push_script} ${BASEDIR}/latest-upx
 run-latest-upx:
 	bash ${docker_run_script} ${BASEDIR}/latest-upx
+
+# version 1.17
+1.17: build-1.17 push-1.17
+build-1.17:
+	bash ${docker_build_script} ${BASEDIR}/1.17
+push-1.17:
+	bash ${docker_push_script} ${BASEDIR}/1.17
+run-1.17:
+	bash ${docker_run_script} ${BASEDIR}/1.17
+
+# version 1.17 with upx
+1.17-upx: build-1.17-upx push-1.17-upx
+build-1.17-upx:
+	bash ${docker_build_script} ${BASEDIR}/1.17-upx
+push-1.17-upx:
+	bash ${docker_push_script} ${BASEDIR}/1.17-upx
+run-1.17-upx:
+	bash ${docker_run_script} ${BASEDIR}/1.17-upx
 
 # version 1.16
 1.16: build-1.16 push-1.16
