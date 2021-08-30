@@ -17,21 +17,13 @@ RUN git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%C
 # compile use
 RUN apt-get install -y gcc g++
 
-# tini install, pid control
-ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin/tini
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini.asc /sbin/tini.asc
-# RUN gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 \
-#  && gpg --batch --verify /usr/bin/tini.asc /usr/bin/tini
-RUN chmod +x /sbin/tini
-
 # timezone
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
-# RUN wget https://golang.org/doc/install?download=go1.16.4.linux-amd64.tar.gz
-RUN wget http://qtg5a7g51.hb-bkt.clouddn.com/go1.16.4.linux-amd64.tar.gz
-RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz && rm go1.16.4.linux-amd64.tar.gz
+# RUN wget https://golang.org/dl/go1.16.7.inux-amd64.tar.gz
+RUN wget https://studygolang.com/dl/golang/go1.16.7.linux-amd64.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz && rm go1.16.7.linux-amd64.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin
 
 # local
@@ -55,10 +47,7 @@ RUN tar -xJOf /tmp/upx.tar.xy upx-${UPX_VERSION}-amd64_linux/upx > /bin/upx \
  && chmod +x /bin/upx && rm /tmp/upx.tar.xy
 
 # Google
-# RUN wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
-
-# QINIU cache
-RUN wget http://qtg5a7g51.hb-bkt.clouddn.com/libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
+RUN wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
 RUN tar -C /usr/local -xzf libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz && ldconfig && rm libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
 
 # reduce image size
