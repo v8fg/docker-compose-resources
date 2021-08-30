@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest 16.04 16.04-go1.16 16.04-go1.16-tf-cpu 16.04-go1.16-upx 16.04-tf-cpu
+.PHONY: default all latest 16.04-go1.17-tf-cpu 16.04-go1.17-upx 16.04 16.04-go1.16 16.04-go1.16-tf-cpu 16.04-go1.16-upx 16.04-tf-cpu
 
 default: latest
 
-all: latest 16.04 16.04-go1.16 16.04-go1.16-tf-cpu 16.04-go1.16-upx 16.04-tf-cpu
+all: latest 16.04-go1.17-tf-cpu 16.04-go1.17-upx 16.04 16.04-go1.16 16.04-go1.16-tf-cpu 16.04-go1.16-upx 16.04-tf-cpu
 
 # latest build and push
 latest: build push
@@ -34,6 +34,24 @@ push-latest:
 	bash ${docker_push_script} ${BASEDIR}/latest
 run-latest:
 	bash ${docker_run_script} ${BASEDIR}/latest
+
+# version 16.04-go1.17-tf-cpu
+16.04-go1.17-tf-cpu: build-16.04-go1.17-tf-cpu push-16.04-go1.17-tf-cpu
+build-16.04-go1.17-tf-cpu:
+	bash ${docker_build_script} ${BASEDIR}/16.04-go1.17-tf-cpu
+push-16.04-go1.17-tf-cpu:
+	bash ${docker_push_script} ${BASEDIR}/16.04-go1.17-tf-cpu
+run-16.04-go1.17-tf-cpu:
+	bash ${docker_run_script} ${BASEDIR}/16.04-go1.17-tf-cpu
+
+# version 16.04-go1.17-upx
+16.04-go1.17-upx: build-16.04-go1.17-upx push-16.04-go1.17-upx
+build-16.04-go1.17-upx:
+	bash ${docker_build_script} ${BASEDIR}/16.04-go1.17-upx
+push-16.04-go1.17-upx:
+	bash ${docker_push_script} ${BASEDIR}/16.04-go1.17-upx
+run-16.04-go1.17-upx:
+	bash ${docker_run_script} ${BASEDIR}/16.04-go1.17-upx
 
 # version 16.04
 16.04: build-16.04 push-16.04
