@@ -2,3 +2,4 @@
 **/nexus-data
 .vscode
 workspace*
+**/tmp_sources
