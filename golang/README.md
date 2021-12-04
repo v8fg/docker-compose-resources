@@ -6,6 +6,8 @@
 - [x] [latest-upx](./latest-upx/Dockerfile)
 - [x] [1.17](./1.17/Dockerfile)
 - [x] [1.17-upx]((./1.17-upx/Dockerfile))
+- [x] [1.17.3](./1.17.3/Dockerfile)
+- [x] [1.17.3-upx]((./1.17.3-upx/Dockerfile))
 - [x] [1.16.7](./1.16.7/Dockerfile)
 - [x] [1.16.7-upx]((./1.16.7-upx/Dockerfile))
 - [x] [1.16](./1.16/Dockerfile)

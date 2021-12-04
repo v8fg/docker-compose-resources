@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  ubuntu:
+  golang:
     build: .
-    container_name: ubuntu-latest
+    container_name: golang-1.17.3-upx
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/ubuntu:22.04
+    image: v8fg/golang:1.17.3-upx
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
