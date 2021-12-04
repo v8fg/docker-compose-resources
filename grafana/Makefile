@@ -1,5 +1,9 @@
 SHELL := /bin/sh
 
+NO_COLOR=\033[0m
+OK_COLOR=\033[32;01m
+ERROR_COLOR=\033[31;01m
+
 existBash = $(shell cat /etc/shells|grep -w /bin/bash|grep -v grep)
 ifneq (, $(strip ${existBash}))
 	SHELL = /bin/bash
@@ -13,60 +17,30 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest 7.0.3 7.0.3-ubuntu 6.7.4 6.7.4-ubuntu
 
-default: latest 7.0.3 6.7.4
+tag = latest
+# $(info input tag: ${tag})
 
-all: latest 7.0.3 7.0.3-ubuntu 6.7.4 6.7.4-ubuntu
+.PHONY: default list all build push run 
 
-# latest build and push
-latest: build push
+default: list
 
-# version default
-build: build-latest
-push: push-latest
-run: run-latest
+list:
+	@printf "$(ERROR_COLOR) all tags: $(shell find . -type d -d 1|awk -F '/' '{print $2}'|sort -r|xargs) $(NO_COLOR)\n"
 
-# version latest
-build-latest:
-	bash ${docker_build_script} ${BASEDIR}/latest
-push-latest:
-	bash ${docker_push_script} ${BASEDIR}/latest
-run-latest:
-	bash ${docker_run_script} ${BASEDIR}/latest
+all: build push
+	@echo "done, ops(build, push), tag: ${tag}"
 
-# version 7.0.3
-7.0.3: build-7.0.3 push-7.0.3
-build-7.0.3:
-	bash ${docker_build_script} ${BASEDIR}/7.0.3
-push-7.0.3:
-	bash ${docker_push_script} ${BASEDIR}/7.0.3
-run-7.0.3:
-	bash ${docker_run_script} ${BASEDIR}/7.0.3
-
-# version 7.0.3-ubuntu
-7.0.3-ubuntu: build-7.0.3-ubuntu push-7.0.3-ubuntu
-build-7.0.3-ubuntu:
-	bash ${docker_build_script} ${BASEDIR}/7.0.3-ubuntu
-push-7.0.3-ubuntu:
-	bash ${docker_push_script} ${BASEDIR}/7.0.3-ubuntu
-run-7.0.3-ubuntu:
-	bash ${docker_run_script} ${BASEDIR}/7.0.3-ubuntu
-
-# version 6.7.4
-6.7.4: build-6.7.4 push-6.7.4
-build-6.7.4:
-	bash ${docker_build_script} ${BASEDIR}/6.7.4
-push-6.7.4:
-	bash ${docker_push_script} ${BASEDIR}/6.7.4
-run-6.7.4:
-	bash ${docker_run_script} ${BASEDIR}/6.7.4
-
-# version 6.7.4-ubuntu
-6.7.4-ubuntu: build-6.7.4-ubuntu push-6.7.4-ubuntu
-build-6.7.4-ubuntu:
-	bash ${docker_build_script} ${BASEDIR}/6.7.4-ubuntu
-push-6.7.4-ubuntu:
-	bash ${docker_push_script} ${BASEDIR}/6.7.4-ubuntu
-run-6.7.4-ubuntu:
-	bash ${docker_run_script} ${BASEDIR}/6.7.4-ubuntu
+# version default latest
+build: 
+	@#echo build with tag: ${tag}
+	@printf "$(OK_COLOR)build with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_build_script} ${BASEDIR}/${tag}
+push:
+	@#echo push with tag: ${tag}
+	@printf "$(OK_COLOR)push with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_push_script} ${BASEDIR}/${tag}
+run:
+	@#echo run with tag: ${tag}
+	@printf "$(OK_COLOR)run with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_run_script} ${BASEDIR}/${tag}

@@ -24,6 +24,10 @@
 
 `docker pull [OPTIONS] NAME[:TAG|@DIGEST]`
 
+### copy file to multi dirs
+
+`find . -type d -d 1|grep -v '^\./\.\|scripts'|xargs -n 1 cp -v alpine/Makefile`
+
 ## Project Structure
 
 ```text

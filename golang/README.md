@@ -6,6 +6,8 @@
 - [x] [latest-upx](./latest-upx/Dockerfile)
 - [x] [1.17](./1.17/Dockerfile)
 - [x] [1.17-upx]((./1.17-upx/Dockerfile))
+- [x] [1.17.4](./1.17.4/Dockerfile)
+- [x] [1.17.4-upx]((./1.17.4-upx/Dockerfile))
 - [x] [1.17.3](./1.17.3/Dockerfile)
 - [x] [1.17.3-upx]((./1.17.3-upx/Dockerfile))
 - [x] [1.16.7](./1.16.7/Dockerfile)
@@ -30,6 +32,8 @@
 
 >ref: [Makefile](./Makefile)
 
-- build image: `make build`
-- push image: `make push`
-- run container: `make run`
+- build and push image: `make all [tag=latest]`
+- build image: `make build [tag=latest]`
+- push image: `make push [tag=latest]`
+- run container: `make run [tag=latest]`
+- list all tags: `make | make list`

@@ -1,5 +1,9 @@
 SHELL := /bin/sh
 
+NO_COLOR=\033[0m
+OK_COLOR=\033[32;01m
+ERROR_COLOR=\033[31;01m
+
 existBash = $(shell cat /etc/shells|grep -w /bin/bash|grep -v grep)
 ifneq (, $(strip ${existBash}))
 	SHELL = /bin/bash
@@ -13,42 +17,30 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest 5.7.30 8.0.20
 
-default: latest
+tag = latest
+# $(info input tag: ${tag})
 
-all: latest 5.7.30 8.0.20
+.PHONY: default list all build push run 
 
-# latest build and push
-latest: build push
+default: list
 
-# version default
-build: build-latest
-push: push-latest
-run: run-latest
+list:
+	@printf "$(ERROR_COLOR) all tags: $(shell find . -type d -d 1|awk -F '/' '{print $2}'|sort -r|xargs) $(NO_COLOR)\n"
 
-# version latest
-build-latest:
-	bash ${docker_build_script} ${BASEDIR}/latest
-push-latest:
-	bash ${docker_push_script} ${BASEDIR}/latest
-run-latest:
-	bash ${docker_run_script} ${BASEDIR}/latest
+all: build push
+	@echo "done, ops(build, push), tag: ${tag}"
 
-# version 5.7.30
-5.7.30: build-5.7.30 push-5.7.30
-build-5.7.30:
-	bash ${docker_build_script} ${BASEDIR}/5.7.30
-push-5.7.30:
-	bash ${docker_push_script} ${BASEDIR}/5.7.30
-run-5.7.30:
-	bash ${docker_run_script} ${BASEDIR}/5.7.30
-
-# version 8.0.20
-8.0.20: build-8.0.20 push-8.0.20
-build-8.0.20:
-	bash ${docker_build_script} ${BASEDIR}/8.0.20
-push-8.0.20:
-	bash ${docker_push_script} ${BASEDIR}/8.0.20
-run-8.0.20:
-	bash ${docker_run_script} ${BASEDIR}/8.0.20
+# version default latest
+build: 
+	@#echo build with tag: ${tag}
+	@printf "$(OK_COLOR)build with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_build_script} ${BASEDIR}/${tag}
+push:
+	@#echo push with tag: ${tag}
+	@printf "$(OK_COLOR)push with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_push_script} ${BASEDIR}/${tag}
+run:
+	@#echo run with tag: ${tag}
+	@printf "$(OK_COLOR)run with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_run_script} ${BASEDIR}/${tag}

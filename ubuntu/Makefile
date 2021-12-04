@@ -19,15 +19,17 @@ docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
 
 tag = latest
-$(info input tag: ${tag})
+# $(info input tag: ${tag})
 
-.PHONY: default all build push run 
+.PHONY: default list all build push run 
 
-default: all
+default: list
+
+list:
+	@printf "$(ERROR_COLOR) all tags: $(shell find . -type d -d 1|awk -F '/' '{print $2}'|sort -r|xargs) $(NO_COLOR)\n"
 
 all: build push
 	@echo "done, ops(build, push), tag: ${tag}"
-
 
 # version default latest
 build: 
