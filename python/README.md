@@ -3,6 +3,8 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
+- [x] [3.9](./3.9/Dockerfile)
+- [x] [3.8](./3.8/Dockerfile)
 - [x] [3.7](./3.7/Dockerfile)
 
 ## Scripts

@@ -3,7 +3,11 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
-- [x] [1.21.1](./1.21.1/Dockerfile)
+- [x] [1.21](./1.21/Dockerfile)
+- [x] [1.21-alpine](./1.21-alpine/Dockerfile)
+- [x] [1.21-alpine-perl](./1.21-alpine-perl/Dockerfile)
+- [x] [1.21-perl](./1.21-perl/Dockerfile)
+- [x] [1.21](./1.21/Dockerfile)
 - [x] [1.21.1-alpine](./1.21.1-alpine/Dockerfile)
 - [x] [1.21.1-alpine-perl](./1.21.1-alpine-perl/Dockerfile)
 - [x] [1.21.1-perl](./1.21.1-perl/Dockerfile)
