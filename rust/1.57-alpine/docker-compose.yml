@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  alpine:
+    build: .
+    container_name: rust-1.57-alpine
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/rust:1.57-alpine
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]

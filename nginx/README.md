@@ -3,7 +3,11 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
-- [x] [1.21.1](./1.21.1/Dockerfile)
+- [x] [1.21](./1.21/Dockerfile)
+- [x] [1.21-alpine](./1.21-alpine/Dockerfile)
+- [x] [1.21-alpine-perl](./1.21-alpine-perl/Dockerfile)
+- [x] [1.21-perl](./1.21-perl/Dockerfile)
+- [x] [1.21](./1.21/Dockerfile)
 - [x] [1.21.1-alpine](./1.21.1-alpine/Dockerfile)
 - [x] [1.21.1-alpine-perl](./1.21.1-alpine-perl/Dockerfile)
 - [x] [1.21.1-perl](./1.21.1-perl/Dockerfile)
@@ -20,6 +24,8 @@
 
 >ref: [Makefile](./Makefile)
 
-- build image: `make build`
-- push image: `make push`
-- run container: `make run`
+- build and push image: `make all [tag=latest]`
+- build image: `make build [tag=latest]`
+- push image: `make push [tag=latest]`
+- run container: `make run [tag=latest]`
+- list all tags: `make | make list`

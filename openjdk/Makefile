@@ -1,5 +1,9 @@
 SHELL := /bin/sh
 
+NO_COLOR=\033[0m
+OK_COLOR=\033[32;01m
+ERROR_COLOR=\033[31;01m
+
 existBash = $(shell cat /etc/shells|grep -w /bin/bash|grep -v grep)
 ifneq (, $(strip ${existBash}))
 	SHELL = /bin/bash
@@ -13,116 +17,30 @@ docker_build_script=${BASEDIR}/../scripts/docker-build.sh
 docker_push_script=${BASEDIR}/../scripts/docker-push.sh
 docker_run_script=${BASEDIR}/../scripts/docker-run.sh
 
-.PHONY: default all latest 8u212-jdk-alpine3.9 8u212-jre-alpine3.9 8u252-jdk 8u252-jdk-slim-buster \
-	8u252-jre 8u252-jre-slim-buster 15-jdk-alpine3.11 15-jdk-buster 15-jdk-oracle 15-jdk-slim-buster
 
-default: latest
+tag = latest
+# $(info input tag: ${tag})
 
-all: latest 8u212-jdk-alpine3.9 8u212-jre-alpine3.9 8u252-jdk 8u252-jdk-slim-buster \
-	8u252-jre 8u252-jre-slim-buster 15-jdk-alpine3.11 15-jdk-buster 15-jdk-oracle 15-jdk-slim-buster
+.PHONY: default list all build push run 
 
-# latest build and push
-latest: build push
+default: list
 
-# version default
-build: build-latest
-push: push-latest
-run: run-latest
+list:
+	@printf "$(ERROR_COLOR) all tags: $(shell find . -type d -d 1|awk -F '/' '{print $2}'|sort -r|xargs) $(NO_COLOR)\n"
 
-# version latest
-build-latest:
-	bash ${docker_build_script} ${BASEDIR}/latest
-push-latest:
-	bash ${docker_push_script} ${BASEDIR}/latest
-run-latest:
-	bash ${docker_run_script} ${BASEDIR}/latest
+all: build push
+	@echo "done, ops(build, push), tag: ${tag}"
 
-# version 8u212-jdk-alpine3.9
-8u212-jdk-alpine3.9: build-8u212-jdk-alpine3.9 push-8u212-jdk-alpine3.9
-build-8u212-jdk-alpine3.9:
-	bash ${docker_build_script} ${BASEDIR}/8u212-jdk-alpine3.9
-push-8u212-jdk-alpine3.9:
-	bash ${docker_push_script} ${BASEDIR}/8u212-jdk-alpine3.9
-run-8u212-jdk-alpine3.9:
-	bash ${docker_run_script} ${BASEDIR}/8u212-jdk-alpine3.9
-
-# version 8u212-jre-alpine3.9
-8u212-jre-alpine3.9: build-8u212-jre-alpine3.9 push-8u212-jre-alpine3.9
-build-8u212-jre-alpine3.9:
-	bash ${docker_build_script} ${BASEDIR}/8u212-jre-alpine3.9
-push-8u212-jre-alpine3.9:
-	bash ${docker_push_script} ${BASEDIR}/8u212-jre-alpine3.9
-run-8u212-jre-alpine3.9:
-	bash ${docker_run_script} ${BASEDIR}/8u212-jre-alpine3.9
-
-# version 8u252-jdk
-8u252-jdk: build-8u252-jdk push-8u252-jdk
-build-8u252-jdk:
-	bash ${docker_build_script} ${BASEDIR}/8u252-jdk
-push-8u252-jdk:
-	bash ${docker_push_script} ${BASEDIR}/8u252-jdk
-run-8u252-jdk:
-	bash ${docker_run_script} ${BASEDIR}/8u252-jdk
-
-# version 8u252-jdk-slim-buster
-8u252-jdk-slim-buster: build-8u252-jdk-slim-buster push-8u252-jdk-slim-buster
-build-8u252-jdk-slim-buster:
-	bash ${docker_build_script} ${BASEDIR}/8u252-jdk-slim-buster
-push-8u252-jdk-slim-buster:
-	bash ${docker_push_script} ${BASEDIR}/8u252-jdk-slim-buster
-run-8u252-jdk-slim-buster:
-	bash ${docker_run_script} ${BASEDIR}/8u252-jdk-slim-buster
-
-# version 8u252-jre
-8u252-jre: build-8u252-jre push-8u252-jre
-build-8u252-jre:
-	bash ${docker_build_script} ${BASEDIR}/8u252-jre
-push-8u252-jre:
-	bash ${docker_push_script} ${BASEDIR}/8u252-jre
-run-8u252-jre:
-	bash ${docker_run_script} ${BASEDIR}/8u252-jre
-
-# version 8u252-jre-slim-buster
-8u252-jre-slim-buster: build-8u252-jre-slim-buster push-8u252-jre-slim-buster
-build-8u252-jre-slim-buster:
-	bash ${docker_build_script} ${BASEDIR}/8u252-jre-slim-buster
-push-8u252-jre-slim-buster:
-	bash ${docker_push_script} ${BASEDIR}/8u252-jre-slim-buster
-run-8u252-jre-slim-buster:
-	bash ${docker_run_script} ${BASEDIR}/8u252-jre-slim-buster
-
-# version 15-jdk-alpine3.11
-15-jdk-alpine3.11: build-15-jdk-alpine3.11 push-15-jdk-alpine3.11
-build-15-jdk-alpine3.11:
-	bash ${docker_build_script} ${BASEDIR}/15-jdk-alpine3.11
-push-15-jdk-alpine3.11:
-	bash ${docker_push_script} ${BASEDIR}/15-jdk-alpine3.11
-run-15-jdk-alpine3.11:
-	bash ${docker_run_script} ${BASEDIR}/15-jdk-alpine3.11
-
-# version 15-jdk-buster
-15-jdk-buster: build-15-jdk-buster push-15-jdk-buster
-build-15-jdk-buster:
-	bash ${docker_build_script} ${BASEDIR}/15-jdk-buster
-push-15-jdk-buster:
-	bash ${docker_push_script} ${BASEDIR}/15-jdk-buster
-run-15-jdk-buster:
-	bash ${docker_run_script} ${BASEDIR}/15-jdk-buster
-
-# version 15-jdk-oracle
-15-jdk-oracle: build-15-jdk-oracle push-15-jdk-oracle
-build-15-jdk-oracle:
-	bash ${docker_build_script} ${BASEDIR}/15-jdk-oracle
-push-15-jdk-oracle:
-	bash ${docker_push_script} ${BASEDIR}/15-jdk-oracle
-run-15-jdk-oracle:
-	bash ${docker_run_script} ${BASEDIR}/15-jdk-oracle
-
-# version 15-jdk-slim-buster
-15-jdk-slim-buster: build-15-jdk-slim-buster push-15-jdk-slim-buster
-build-15-jdk-slim-buster:
-	bash ${docker_build_script} ${BASEDIR}/15-jdk-slim-buster
-push-15-jdk-slim-buster:
-	bash ${docker_push_script} ${BASEDIR}/15-jdk-slim-buster
-run-15-jdk-slim-buster:
-	bash ${docker_run_script} ${BASEDIR}/15-jdk-slim-buster
+# version default latest
+build: 
+	@#echo build with tag: ${tag}
+	@printf "$(OK_COLOR)build with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_build_script} ${BASEDIR}/${tag}
+push:
+	@#echo push with tag: ${tag}
+	@printf "$(OK_COLOR)push with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_push_script} ${BASEDIR}/${tag}
+run:
+	@#echo run with tag: ${tag}
+	@printf "$(OK_COLOR)run with tag: ${tag}$(NO_COLOR)\n"
+	bash ${docker_run_script} ${BASEDIR}/${tag}
