@@ -3,7 +3,6 @@ services:
   ubuntu:
     build: .
     container_name: ubuntu-16.04-go1.17-tf-cpu
-    context: ./
     environment:
       TZ: Asia/Shanghai
     image: v8fg/ubuntu:16.04-go1.17-tf-cpu

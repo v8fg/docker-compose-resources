@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=22.04-go1.17.4-upx
+TAG=20.04-tf-cpu
 USER=v8fg
 NAME=ubuntu
 
