@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  busybox:
+    build: .
+    container_name: busybox-1.34-glibc
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/busybox:1.34-glibc
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    # command: [ "/bin/bash"]

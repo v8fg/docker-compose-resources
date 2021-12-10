@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  kibana:
+    build: .
+    container_name: kibana-7.14.2
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/kibana:7.14.2
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]

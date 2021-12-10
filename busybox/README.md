@@ -3,10 +3,9 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
-- [x] [3.15](./3.15/Dockerfile)
-- [x] [3.14](./3.14/Dockerfile)
-- [x] [3.13](./3.13/Dockerfile)
-- [x] [3.12](./3.12/Dockerfile)
+- [x] [1.34-glibc](./1.34-glibc/Dockerfile)
+- [x] [1.34-musl](./1.34-musl/Dockerfile)
+- [x] [1.34-uclibc](./1.34-uclibc/Dockerfile)
 
 ## Scripts
 

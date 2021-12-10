@@ -3,10 +3,7 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
-- [x] [3.15](./3.15/Dockerfile)
-- [x] [3.14](./3.14/Dockerfile)
-- [x] [3.13](./3.13/Dockerfile)
-- [x] [3.12](./3.12/Dockerfile)
+- [x] [2.6.0-alpine](./2.6.0-alpine/Dockerfile)
 
 ## Scripts
 

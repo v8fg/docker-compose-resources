@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  kong:
+    build: .
+    container_name: kong-latest
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/kong:latest
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
