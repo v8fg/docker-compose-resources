@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  julia:
+    build: .
+    container_name: julia-1.7-alpine3.15
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/julia:1.7-alpine3.15
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
