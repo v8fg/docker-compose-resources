@@ -8,8 +8,7 @@
 
 - [x] [latest](./gitlab-ce/latest/Dockerfile)
 - [x] [nightly](./gitlab-ce/nightly/Dockerfile)
-- [x] [14.1.2](./gitlab-ce/14.1.2/Dockerfile)
-- [x] [13.11.3](./gitlab-ce/13.11.3/Dockerfile)
+- [x] [14.5.2](./gitlab-ce/14.5.2/Dockerfile)
 
 ### runner
 
@@ -19,8 +18,8 @@
 ### sameersbn
 
 - [x] [latest](./gitlab-sameersbn/latest/Dockerfile)
-- [x] [14.1.1](./gitlab-sameersbn/14.1.1/Dockerfile)
-- [x] [13.12.2](./gitlab-sameersbn/13.12.2/Dockerfile)
+- [x] [14.4.3](./gitlab-sameersbn/14.4.3/Dockerfile)
+- [x] [13.12.4](./gitlab-sameersbn/13.12.4/Dockerfile)
 
 ## Scripts
 

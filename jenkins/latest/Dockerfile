@@ -1,31 +1,30 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:2.324-alpine
 
 LABEL maintainer="278810732@qq.com" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
-ENV TZ=Asia/Shanghai
-
-# if we want to install via apt
 USER root
 
-# ENV JENKINS_UC https://updates.jenkins-zh.cn
-# ENV JENKINS_UC_DOWNLOAD https://mirrors.tuna.tsinghua.edu.cn/jenkins
-# ENV JENKINS_OPTS="-Dhudson.model.UpdateCenter.updateCenterUrl=https://updates.jenkins-zh.cn/update-center.json"
-# ENV JENKINS_OPTS="-Djenkins.install.runSetupWizard=false"
+RUN apk add --no-cache tzdata bash
 
-# COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/init.groovy
-# COPY hudson.model.UpdateCenter.xml /usr/share/jenkins/ref/hudson.model.UpdateCenter.xml
-# COPY mirror-adapter.crt /usr/share/jenkins/ref/mirror-adapter.crt
+# RUN wget https://golang.org/dl/go1.17.5.inux-amd64.tar.gz && \
+RUN wget https://studygolang.com/dl/golang/go1.17.5.linux-amd64.tar.gz && \
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz && rm go1.17.5.linux-amd64.tar.gz
 
-COPY ./sources/sources.list /etc/apt/sources.list
+ENV PATH=$PATH:/usr/local/go/bin GOPROXY=https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://gocenter.io/,https://proxy.golang.org,direct
 
-RUN apt-get update && apt-get install -y gcc build-essential libssl-dev make upx apt-utils
-RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
-RUN wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.14.4.linux-amd64.tar.gz
-ENV GOPROXY=https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://proxy.golang.org,direct
-ENV GOROOT="/usr/local/go" PATH=$GOROOT/bin:$PATH
+# Version of upx to be used(without the 'v' prefix)
+# For all releases, see https://github.com/upx/upx/releases
+ARG UPX_VERSION=3.96
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+# Fetch upx, decompress it, make it executable.
+# ADD https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz /tmp/upx.tar.xy
 
-# USER jenkins 
-# drop back to the regular jenkins user - good practice
+# wget cache
+RUN wget https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz -O /tmp/upx.tar.xy && \
+tar -xJOf /tmp/upx.tar.xy upx-${UPX_VERSION}-amd64_linux/upx > /bin/upx && chmod +x /bin/upx && rm /tmp/upx.tar.xy
+
+
+ENV TZ=Asia/Shanghai
+
+USER jenkins

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=13.12.2
+TAG=13.12.4
 USER=v8fg
 NAME=gitlab
 
