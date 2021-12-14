@@ -8,6 +8,8 @@
 - [x] [1.17-upx]((./1.17-upx/Dockerfile))
 - [x] [1.17.5](./1.17.5/Dockerfile)
 - [x] [1.17.5-upx]((./1.17.5-upx/Dockerfile))
+- [x] [1.17.3](./1.17.3/Dockerfile)
+- [x] [1.17.3-upx]((./1.17.3-upx/Dockerfile))
 - [x] [1.16](./1.16/Dockerfile)
 - [x] [1.16-upx]((./1.16-upx/Dockerfile))
 - [x] [1.16.12](./1.16.12/Dockerfile)
