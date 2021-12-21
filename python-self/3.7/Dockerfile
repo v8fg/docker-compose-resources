@@ -12,13 +12,12 @@ USER root
 # ADD tmp_sources/google-chrome-stable_current_amd64.deb /opt
 
 RUN apt-get update
-RUN apt-get install tzdata bash
 
 # RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
 # RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 # RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
-RUN apt-get install cron libx11-xcb1 libudev1 -yq
+RUN apt-get install -y tzdata bash cron libx11-xcb1 libudev1 -yq
 
 RUN apt autoremove -y 
 # RUN apt-get install --fix-missing /opt/google-chrome* -yq
