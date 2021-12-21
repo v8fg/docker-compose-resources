@@ -17,7 +17,7 @@ docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 	golang golang-upx influxdb jenkins julia kafka kafkamanager kibana logstash mysql nexus3 nginx node openjdk \
 	postgres python redis ruby rust ubuntu
 
-all: clean alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+all: alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kafkamanager kibana logstash mysql nexus3 nginx node openjdk \
 	postgres redis ruby rust ubuntu
 
