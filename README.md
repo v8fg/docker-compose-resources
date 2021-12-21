@@ -3,11 +3,20 @@
 ## Image List
 
 - [alpine](./alpine/README.md)
+- [busybox](./busybox/README.md)
+- [centos](./centos/README.md)
+- [elasticsearch](./elasticsearch/README.md)
+- [fluentd](./fluentd/README.md)
 - [gitlab](./gitlab/README.md)
 - [golang](./golang/README.md)
 - [grafana](./grafana/README.md)
+- [influxdb](./influxdb/README.md)
 - [jenkins](./jenkins/README.md)
+- [julia](./julia/README.md)
 - [kafka](./kafka/README.md)
+- [kafkamanager](./kafkamanager/README.md)
+- [kibana](./kibana/README.md)
+- [logstash](./logstash/README.md)
 - [mysql](./mysql/README.md)
 - [nexus3](./nexus3/README.md)
 - [nginx](./nginx/README.md)
@@ -15,6 +24,7 @@
 - [openjdk](./openjdk/README.md)
 - [postgres](./postgres/README.md)
 - [redis](./redis/README.md)
+- [ruby](./ruby/README.md)
 - [rust](./rust/README.md)
 - [ubuntu](./ubuntu/README.md)
 
@@ -32,8 +42,6 @@
 
 ```text
 ┌── golang:                         golang related Dockerfile & docker-compose file
-    |__ 1.14.4:                     golang version 1.14.4 image dir
-    |__ 1.14.4-upx:                 golang version 1.14.4 with upx
     |__ latest:                     golang version latest image dir
         |__ docker-compose.yml:     docker compose file, use to create and start container
         |__ docker-version.sh:      version info for build and push docker image

@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  python-self:
+    build: .
+    container_name: python-self-3.7.11
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/python-self:3.7.11
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]

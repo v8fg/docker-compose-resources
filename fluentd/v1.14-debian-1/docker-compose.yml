@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  fluentd:
+    build: .
+    container_name: fluentd-v1.14-debian-1
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/fluentd:v1.14-debian-1
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]

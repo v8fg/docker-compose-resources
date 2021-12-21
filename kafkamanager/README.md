@@ -1,4 +1,4 @@
-# Docker Compose Resources For KafkaManager
+# Docker Compose Resources
 
 ## Images
 

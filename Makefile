@@ -13,15 +13,15 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all alpine gitlab-ce gitlab-runner gitlab-sameersbn golang golang-upx kafka mysql nexus3 \
-	nginx node openjdk postgres redis
+.PHONY: default all alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+	golang golang-upx influxdb jenkins julia kafka kafkamanager kibana logstash mysql nexus3 nginx node openjdk \
+	postgres python redis ruby rust ubuntu
 
-.PHONY: default all alpine gitlab-ce gitlab-runner gitlab-sameersbn golang golang-upx kafka mysql nexus3 \
-	nginx node openjdk postgres redis
-	
-default: clean alpine gitlab-ce gitlab-runner gitlab-sameersbn golang kafka mysql nexus3 nginx node openjdk postgres redis
+all: clean alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+	golang golang-upx influxdb jenkins julia kafka kafkamanager kibana logstash mysql nexus3 nginx node openjdk \
+	postgres redis ruby rust ubuntu
 
-all: clean alpine golang golang-upx gitlab-ce gitlab-runner gitlab-sameersbn kafka mysql nexus3 nginx node openjdk postgres redis
+default: clean
 
 clean:
 	bash ${docker_clean_script}
@@ -34,6 +34,32 @@ alpine-build:
 	bash ${docker_build_script} ${BASEDIR}/alpine/latest
 alpine-push:
 	bash ${docker_push_script} ${BASEDIR}/alpine/latest
+
+busybox: busybox-build busybox-push
+busybox-build:
+	bash ${docker_build_script} ${BASEDIR}/busybox/latest
+busybox-push:
+	bash ${docker_push_script} ${BASEDIR}/busybox/latest
+
+centos: centos-build centos-push
+centos-build:
+	bash ${docker_build_script} ${BASEDIR}/centos/latest
+centos-push:
+	bash ${docker_push_script} ${BASEDIR}/centos/latest
+
+elasticsearch: elasticsearch-build elasticsearch-push
+elasticsearch-build:
+	bash ${docker_build_script} ${BASEDIR}/elasticsearch/latest
+elasticsearch-push:
+	bash ${docker_push_script} ${BASEDIR}/elasticsearch/latest
+
+fluentd: fluentd-build fluentd-push
+fluentd-build:
+	bash ${docker_build_script} ${BASEDIR}/fluentd/latest
+fluentd-push:
+	bash ${docker_push_script} ${BASEDIR}/fluentd/latest
+
+gitlab: gitlab-ce gitlab-runner gitlab-sameersbn
 
 gitlab-ce: gitlab-ce-build gitlab-ce-push
 gitlab-ce-build:
@@ -53,27 +79,65 @@ gitlab-sameersbn-build:
 gitlab-sameersbn-push:
 	bash ${docker_push_script} ${BASEDIR}/gitlab/gitlab-sameersbn/latest
 
-# golang build and push, default(latest)
 golang: golang-build golang-push
-# golang build and push, latest
 golang-build:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest
 golang-push:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest
 
-# golang build and push with upx, default(latest)
 golang-upx: golang-build-upx golang-push-upx
-# golang build and push with upx, latest
 golang-build-upx:
 	bash ${docker_build_script} ${BASEDIR}/golang/latest-upx
 golang-push-upx:
 	bash ${docker_push_script} ${BASEDIR}/golang/latest-upx
+
+grafana: grafana-build grafana-push
+grafana-build:
+	bash ${docker_build_script} ${BASEDIR}/grafana/latest
+grafana-push:
+	bash ${docker_push_script} ${BASEDIR}/grafana/latest
+
+influxdb: influxdb-build influxdb-push
+influxdb-build:
+	bash ${docker_build_script} ${BASEDIR}/influxdb/latest
+influxdb-push:
+	bash ${docker_push_script} ${BASEDIR}/influxdb/latest
+
+jenkins: jenkins-build jenkins-push
+jenkins-build:
+	bash ${docker_build_script} ${BASEDIR}/jenkins/latest
+jenkins-push:
+	bash ${docker_push_script} ${BASEDIR}/jenkins/latest
+
+julia: julia-build julia-push
+julia-build:
+	bash ${docker_build_script} ${BASEDIR}/julia/latest
+julia-push:
+	bash ${docker_push_script} ${BASEDIR}/julia/latest
 
 kafka: kafka-build kafka-push
 kafka-build:
 	bash ${docker_build_script} ${BASEDIR}/kafka/latest
 kafka-push:
 	bash ${docker_push_script} ${BASEDIR}/kafka/latest
+
+kafkamanager: kafkamanager-build kafkamanager-push
+kafkamanager-build:
+	bash ${docker_build_script} ${BASEDIR}/kafkamanager/latest
+kafkamanager-push:
+	bash ${docker_push_script} ${BASEDIR}/kafkamanager/latest
+
+kibana: kibana-build kibana-push
+kibana-build:
+	bash ${docker_build_script} ${BASEDIR}/kibana/latest
+kibana-push:
+	bash ${docker_push_script} ${BASEDIR}/kibana/latest
+
+logstash: logstash-build logstash-push
+logstash-build:
+	bash ${docker_build_script} ${BASEDIR}/logstash/latest
+logstash-push:
+	bash ${docker_push_script} ${BASEDIR}/logstash/latest
 
 mysql: mysql-build mysql-push
 mysql-build:
@@ -111,8 +175,32 @@ postgres-build:
 postgres-push:
 	bash ${docker_push_script} ${BASEDIR}/postgres/latest
 
+python: python-build python-push
+python-build:
+	bash ${docker_build_script} ${BASEDIR}/python/latest
+python-push:
+	bash ${docker_push_script} ${BASEDIR}/python/latest
+
 redis: redis-build redis-push
 redis-build:
 	bash ${docker_build_script} ${BASEDIR}/redis/latest
 redis-push:
 	bash ${docker_push_script} ${BASEDIR}/redis/latest
+
+ruby: ruby-build ruby-push
+ruby-build:
+	bash ${docker_build_script} ${BASEDIR}/ruby/latest
+ruby-push:
+	bash ${docker_push_script} ${BASEDIR}/ruby/latest
+
+rust: rust-build rust-push
+rust-build:
+	bash ${docker_build_script} ${BASEDIR}/rust/latest
+rust-push:
+	bash ${docker_push_script} ${BASEDIR}/rust/latest
+
+ubuntu: ubuntu-build ubuntu-push
+ubuntu-build:
+	bash ${docker_build_script} ${BASEDIR}/ubuntu/latest
+ubuntu-push:
+	bash ${docker_push_script} ${BASEDIR}/ubuntu/latest
