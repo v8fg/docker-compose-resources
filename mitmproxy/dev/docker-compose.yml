@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  mitmproxy:
+    build: .
+    container_name: mitmproxy-dev
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    image: v8fg/mitmproxy:dev
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]

@@ -14,11 +14,11 @@ docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kibana logstash mysql nexus3 nginx node openjdk \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
 	postgres python redis ruby rust ubuntu
 
 all: alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kibana logstash mysql nexus3 nginx node openjdk \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
 	postgres redis ruby rust ubuntu
 
 default: clean
@@ -132,6 +132,12 @@ logstash-build:
 	bash ${docker_build_script} ${BASEDIR}/logstash/latest
 logstash-push:
 	bash ${docker_push_script} ${BASEDIR}/logstash/latest
+
+mitmproxy: mitmproxy-build mitmproxy-push
+mitmproxy-build:
+	bash ${docker_build_script} ${BASEDIR}/mitmproxy/latest
+mitmproxy-push:
+	bash ${docker_push_script} ${BASEDIR}/mitmproxy/latest
 
 mysql: mysql-build mysql-push
 mysql-build:
