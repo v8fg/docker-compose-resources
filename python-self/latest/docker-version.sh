@@ -3,7 +3,7 @@
 # image info, version may auto update
 TAG=latest
 USER=v8fg
-NAME=kafka-manager
+NAME=python-self
 
 REPOSITORY=${USER}/${NAME}
 # image with tag, use to push image

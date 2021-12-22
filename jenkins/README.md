@@ -1,4 +1,4 @@
-# Docker Compose Resources For Jenkins
+# Docker Compose Resources
 
 ## Images
 

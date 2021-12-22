@@ -1,4 +1,4 @@
-# Docker Compose Resources For Golang
+# Docker Compose Resources
 
 ## Images
 
