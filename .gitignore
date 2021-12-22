@@ -3,3 +3,4 @@
 .vscode
 workspace*
 **/tmp_sources
+**/**/test.dat

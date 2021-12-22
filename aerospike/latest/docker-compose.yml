@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  aerospike:
+    build: .
+    container_name: aerospike-ce-latest
+    environment:
+      TZ: Asia/Shanghai
+      NAMESPACE: test # default namespace
+    volumes:
+      - "./aerospike/etc/:/opt/aerospike/etc/"
+      - "./aerospike/data/:/opt/aerospike/data/"
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+      - "3002:3002"
+    image: v8fg/aerospike:ce-latest
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "--config-file=/opt/aerospike/etc/aerospike.conf"]
