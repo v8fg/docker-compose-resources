@@ -14,11 +14,11 @@ docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kafkamanager kibana logstash mysql nexus3 nginx node openjdk \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mysql nexus3 nginx node openjdk \
 	postgres python redis ruby rust ubuntu
 
 all: alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kafkamanager kibana logstash mysql nexus3 nginx node openjdk \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mysql nexus3 nginx node openjdk \
 	postgres redis ruby rust ubuntu
 
 default: clean
@@ -120,12 +120,6 @@ kafka-build:
 	bash ${docker_build_script} ${BASEDIR}/kafka/latest
 kafka-push:
 	bash ${docker_push_script} ${BASEDIR}/kafka/latest
-
-kafkamanager: kafkamanager-build kafkamanager-push
-kafkamanager-build:
-	bash ${docker_build_script} ${BASEDIR}/kafkamanager/latest
-kafkamanager-push:
-	bash ${docker_push_script} ${BASEDIR}/kafkamanager/latest
 
 kibana: kibana-build kibana-push
 kibana-build:

@@ -14,7 +14,6 @@
 - [jenkins](./jenkins/README.md)
 - [julia](./julia/README.md)
 - [kafka](./kafka/README.md)
-- [kafkamanager](./kafkamanager/README.md)
 - [kibana](./kibana/README.md)
 - [logstash](./logstash/README.md)
 - [mysql](./mysql/README.md)
