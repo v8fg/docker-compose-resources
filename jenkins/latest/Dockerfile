@@ -6,8 +6,8 @@ USER root
 
 RUN apk add --no-cache tzdata bash
 
-# RUN wget https://golang.org/dl/go1.17.5.inux-amd64.tar.gz && \
-RUN wget https://studygolang.com/dl/golang/go1.17.5.linux-amd64.tar.gz && \
+# RUN wget https://studygolang.com/dl/golang/go1.17.5.linux-amd64.tar.gz && \
+RUN wget https://golang.org/dl/go1.17.5.linux-amd64.tar.gz && \
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz && rm go1.17.5.linux-amd64.tar.gz
 
 ENV PATH=$PATH:/usr/local/go/bin GOPROXY=https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://gocenter.io/,https://proxy.golang.org,direct
