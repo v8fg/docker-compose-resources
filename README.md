@@ -27,6 +27,8 @@
 - [node](./node/README.md)
 - [openjdk](./openjdk/README.md)
 - [postgres](./postgres/README.md)
+- [pulsar](./pulsar/README.md)
+- [python](./python/README.md)
 - [redis](./redis/README.md)
 - [ruby](./ruby/README.md)
 - [rust](./rust/README.md)

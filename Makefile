@@ -15,11 +15,11 @@ docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
-	postgres python redis ruby rust flink ubuntu
+	postgres pulsar python redis ruby rust flink ubuntu
 
 all: aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
-	postgres redis ruby rust flink ubuntu
+	postgres pulsar python redis ruby rust flink ubuntu
 
 default: clean
 
@@ -192,6 +192,12 @@ postgres-build:
 	bash ${docker_build_script} ${BASEDIR}/postgres/latest
 postgres-push:
 	bash ${docker_push_script} ${BASEDIR}/postgres/latest
+
+pulsar: pulsar-build pulsar-push
+pulsar-build:
+	bash ${docker_build_script} ${BASEDIR}/pulsar/latest
+pulsar-push:
+	bash ${docker_push_script} ${BASEDIR}/pulsar/latest
 
 python: python-build python-push
 python-build:

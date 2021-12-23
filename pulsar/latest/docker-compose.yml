@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  pulsar:
+    build: .
+    container_name: pulsar-latest
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    volumes:
+      - "./data:/pulsar/data"
+    image: v8fg/pulsar:latest
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: "bin/pulsar standalone"
