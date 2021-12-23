@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  gcc:
+    build: .
+    container_name: gcc-9.4
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/gcc:9.4
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]
