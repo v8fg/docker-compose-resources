@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all aerospike alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+.PHONY: default all aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
 	postgres python redis ruby rust ubuntu
 
-all: aerospike alpine busybox centos elasticsearch fluentd gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+all: aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
 	postgres redis ruby rust ubuntu
 
@@ -64,6 +64,12 @@ fluentd-build:
 	bash ${docker_build_script} ${BASEDIR}/fluentd/latest
 fluentd-push:
 	bash ${docker_push_script} ${BASEDIR}/fluentd/latest
+
+gcc: gcc-build gcc-push
+gcc-build:
+	bash ${docker_build_script} ${BASEDIR}/gcc/latest
+gcc-push:
+	bash ${docker_push_script} ${BASEDIR}/gcc/latest
 
 gitlab: gitlab-ce gitlab-runner gitlab-sameersbn
 

@@ -10,6 +10,7 @@
 - [centos](./centos/README.md)
 - [elasticsearch](./elasticsearch/README.md)
 - [fluentd](./fluentd/README.md)
+- [gcc](./gcc/README.md)
 - [gitlab](./gitlab/README.md)
 - [golang](./golang/README.md)
 - [grafana](./grafana/README.md)
