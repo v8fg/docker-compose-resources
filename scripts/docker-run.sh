@@ -12,4 +12,4 @@ source ${DockerVersionfile}
 echo -e "run image: ${LOCATION}"
 
 # docker volume need the absolute path
-docker run ${DAEMON} -it --name ${CONTAINER_NAME} ${PORT} ${ENV} --rm ${LOCATION}
+docker run ${DAEMON} -it --rm --name ${CONTAINER_NAME} ${PORT} ${ENV} ${LOCATION} ${PARAMS}

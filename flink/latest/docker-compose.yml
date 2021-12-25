@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  flink:
+    build: .
+    container_name: flink-latest
+    environment:
+      TZ: Asia/Shanghai
+      # DISABLE_JEMALLOC: false
+      # FLINK_PROPERTIES: "jobmanager.rpc.address: jobmanager"
+    image: v8fg/flink:latest
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "jobmanager"]
+    # command: [ "taskmanager"]
