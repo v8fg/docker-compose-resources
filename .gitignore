@@ -4,3 +4,4 @@
 workspace*
 **/tmp_sources
 **/**/test.dat
+pulsar/**/data/
