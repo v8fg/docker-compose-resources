@@ -9,6 +9,7 @@
 - [busybox](./busybox/README.md)
 - [centos](./centos/README.md)
 - [elasticsearch](./elasticsearch/README.md)
+- [filebrowser](./filebrowser/README.md)
 - [flink](./flink/README.md)
 - [fluentd](./fluentd/README.md)
 - [gcc](./gcc/README.md)

@@ -15,11 +15,11 @@ docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
-	postgres pulsar python redis ruby rust flink ubuntu
+	postgres pulsar python redis ruby rust filebrowser flink ubuntu
 
 all: aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
-	postgres pulsar python redis ruby rust flink ubuntu
+	postgres pulsar python redis ruby rust filebrowser flink ubuntu
 
 default: clean
 
@@ -58,6 +58,12 @@ elasticsearch-build:
 	bash ${docker_build_script} ${BASEDIR}/elasticsearch/latest
 elasticsearch-push:
 	bash ${docker_push_script} ${BASEDIR}/elasticsearch/latest
+
+filebrowser: filebrowser-build filebrowser-push
+filebrowser-build:
+	bash ${docker_build_script} ${BASEDIR}/filebrowser/latest
+filebrowser-push:
+	bash ${docker_push_script} ${BASEDIR}/filebrowser/latest
 
 flink: flink-build flink-push
 flink-build:

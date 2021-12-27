@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  filebrowser:
+    build: .
+    container_name: filebrowser-v2
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 18888:80
+    volumes:
+      # - "~/:/srv"
+      - "~/software:/srv"
+      - "./conf/filebrowser.json:/.filebrowser.json"
+    image: v8fg/filebrowser:v2
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]
