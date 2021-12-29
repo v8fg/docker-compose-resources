@@ -15,11 +15,11 @@ docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
-	postgres pulsar python redis ruby rust filebrowser flink ubuntu
+	postgres pulsar python redis ruby rust filebrowser flink ubuntu zookeeper
 
 all: aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
-	postgres pulsar python redis ruby rust filebrowser flink ubuntu
+	postgres pulsar python redis ruby rust filebrowser flink ubuntu zookeeper
 
 default: clean
 
@@ -234,3 +234,9 @@ ubuntu-build:
 	bash ${docker_build_script} ${BASEDIR}/ubuntu/latest
 ubuntu-push:
 	bash ${docker_push_script} ${BASEDIR}/ubuntu/latest
+
+zookeeper: zookeeper-build zookeeper-push
+zookeeper-build:
+	bash ${docker_build_script} ${BASEDIR}/zookeeper/latest
+zookeeper-push:
+	bash ${docker_push_script} ${BASEDIR}/zookeeper/latest
