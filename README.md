@@ -34,6 +34,7 @@
 - [ruby](./ruby/README.md)
 - [rust](./rust/README.md)
 - [ubuntu](./ubuntu/README.md)
+- [zookeeper](./zookeeper/README.md)
 
 ## Usage
 
