@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  swift:
+    build: .
+    container_name: swift-5.5-bionic
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/swift:5.5-bionic
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
