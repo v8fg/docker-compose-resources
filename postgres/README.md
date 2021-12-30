@@ -16,4 +16,3 @@
 - push image: `make push [tag=latest]`
 - run container: `make run [tag=latest]`
 - list all tags: `make | make list`
-4
