@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  erlang:
+    build: .
+    container_name: erlang-24.2
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/erlang:24.2
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]

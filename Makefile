@@ -13,11 +13,11 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+.PHONY: default all aerospike alpine busybox centos elasticsearch erlang fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
 	postgres pulsar python redis ruby rust filebrowser flink swift ubuntu zookeeper
 
-all: aerospike alpine busybox centos elasticsearch fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+all: aerospike alpine busybox centos elasticsearch erlang fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
 	postgres pulsar python redis ruby rust filebrowser flink swift ubuntu zookeeper
 
@@ -58,6 +58,12 @@ elasticsearch-build:
 	bash ${docker_build_script} ${BASEDIR}/elasticsearch/latest
 elasticsearch-push:
 	bash ${docker_push_script} ${BASEDIR}/elasticsearch/latest
+
+erlang: erlang-build erlang-push
+erlang-build:
+	bash ${docker_build_script} ${BASEDIR}/erlang/latest
+erlang-push:
+	bash ${docker_push_script} ${BASEDIR}/erlang/latest
 
 filebrowser: filebrowser-build filebrowser-push
 filebrowser-build:
