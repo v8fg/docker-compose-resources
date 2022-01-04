@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  bash:
+    build: .
+    container_name: bash-5.1-alpine3.14
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/bash:5.1-alpine3.14
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]
