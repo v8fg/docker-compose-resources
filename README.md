@@ -6,6 +6,7 @@
 
 - [aerospike](./aerospike/README.md)
 - [alpine](./alpine/README.md)
+- [bash](./bash/README.md)
 - [busybox](./busybox/README.md)
 - [centos](./centos/README.md)
 - [elasticsearch](./elasticsearch/README.md)
