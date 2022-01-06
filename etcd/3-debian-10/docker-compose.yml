@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  etcd:
+    build: .
+    container_name: etcd-3-debian-10
+    environment:
+      TZ: Asia/Shanghai
+      ALLOW_NONE_AUTHENTICATION: yes
+      ETCD_ADVERTISE_CLIENT_URLS: 'http://etcd-server:12379'
+    ports:
+      - 12379:2379
+      - 12380:2380
+    image: v8fg/etcd:3-debian-10
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/sh"]
