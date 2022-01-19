@@ -2,10 +2,10 @@ version: '3.7'
 services:
   rust:
     build: .
-    container_name: rust-1-alpine
+    container_name: rust-1.58-alpine
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/rust:1-alpine
+    image: v8fg/rust:1.58-alpine
     volumes:
       - "./data:/data"
     stdin_open: true

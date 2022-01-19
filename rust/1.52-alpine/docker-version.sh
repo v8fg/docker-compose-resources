@@ -11,3 +11,5 @@ LOCATION=${REPOSITORY}:${TAG}
 
 # use to build container
 CONTAINER_NAME=${USER}-${NAME}-${TAG}
+
+ENV="-v $PWD/data:/data"
