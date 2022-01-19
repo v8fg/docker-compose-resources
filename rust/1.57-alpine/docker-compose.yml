@@ -6,6 +6,8 @@ services:
     environment:
       TZ: Asia/Shanghai
     image: v8fg/rust:1.57-alpine
+    volumes:
+      - "./data:/data"
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
