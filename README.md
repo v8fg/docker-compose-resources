@@ -30,6 +30,7 @@
 - [nginx](./nginx/README.md)
 - [node](./node/README.md)
 - [openjdk](./openjdk/README.md)
+- [php](./php/README.md)
 - [postgres](./postgres/README.md)
 - [pulsar](./pulsar/README.md)
 - [python](./python/README.md)

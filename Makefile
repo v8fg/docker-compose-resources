@@ -14,11 +14,11 @@ docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk php \
 	postgres pulsar python redis ruby rust filebrowser flink swift ubuntu zookeeper
 
 all: aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk php \
 	postgres pulsar python redis ruby rust filebrowser flink swift ubuntu zookeeper
 
 default: clean
@@ -210,6 +210,12 @@ openjdk-build:
 	bash ${docker_build_script} ${BASEDIR}/openjdk/latest
 openjdk-push:
 	bash ${docker_push_script} ${BASEDIR}/openjdk/latest
+
+php: php-build php-push
+php-build:
+	bash ${docker_build_script} ${BASEDIR}/php/latest
+php-push:
+	bash ${docker_push_script} ${BASEDIR}/php/latest
 
 postgres: postgres-build postgres-push
 postgres-build:
