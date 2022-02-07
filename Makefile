@@ -15,11 +15,11 @@ docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk php \
-	postgres pulsar python redis ruby rust filebrowser flink swift ubuntu zookeeper
+	postgres pulsar python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
 
 all: aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk php \
-	postgres pulsar python redis ruby rust filebrowser flink swift ubuntu zookeeper
+	postgres pulsar python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
 
 default: clean
 
@@ -240,6 +240,12 @@ redis-build:
 	bash ${docker_build_script} ${BASEDIR}/redis/latest
 redis-push:
 	bash ${docker_push_script} ${BASEDIR}/redis/latest
+
+registry: registry-build registry-push
+registry-build:
+	bash ${docker_build_script} ${BASEDIR}/registry/latest
+registry-push:
+	bash ${docker_push_script} ${BASEDIR}/registry/latest
 
 ruby: ruby-build ruby-push
 ruby-build:

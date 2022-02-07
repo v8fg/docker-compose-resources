@@ -11,4 +11,3 @@ services:
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
-    command: [ "/bin/bash"]
