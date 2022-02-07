@@ -35,6 +35,7 @@
 - [pulsar](./pulsar/README.md)
 - [python](./python/README.md)
 - [redis](./redis/README.md)
+- [registry](./registry/README.md)
 - [ruby](./ruby/README.md)
 - [rust](./rust/README.md)
 - [swift](./swift/README.md)
