@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  registry:
+    build: .
+    container_name: registry-2.7
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 5000:5000
+    image: v8fg/registry:2.7
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
