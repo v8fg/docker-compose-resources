@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  nats:
+    build: .
+    container_name: nats-2.7-linux
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/nats:2.7-linux
+    volumes:
+      - "./conf/:/etc/nats/"
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+      - 4444:4444 # nats -p
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped

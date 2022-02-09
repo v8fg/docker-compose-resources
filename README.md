@@ -26,6 +26,7 @@
 - [kibana](./kibana/README.md)
 - [logstash](./logstash/README.md)
 - [mysql](./mysql/README.md)
+- [nats](./nats/README.md)
 - [nexus3](./nexus3/README.md)
 - [nginx](./nginx/README.md)
 - [node](./node/README.md)

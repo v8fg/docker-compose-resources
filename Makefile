@@ -14,11 +14,11 @@ docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk php \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nats nexus3 nginx node openjdk php \
 	postgres pulsar python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
 
 all: aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
-	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nexus3 nginx node openjdk php \
+	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nats nexus3 nginx node openjdk php \
 	postgres pulsar python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
 
 default: clean
@@ -186,6 +186,12 @@ mysql-build:
 	bash ${docker_build_script} ${BASEDIR}/mysql/latest
 mysql-push:
 	bash ${docker_push_script} ${BASEDIR}/mysql/latest
+
+nats: nats-build nats-push
+nats-build:
+	bash ${docker_build_script} ${BASEDIR}/nats/latest
+nats-push:
+	bash ${docker_push_script} ${BASEDIR}/nats/latest
 
 nexus3: nexus3-build nexus3-push
 nexus3-build:
