@@ -34,6 +34,7 @@
 - [php](./php/README.md)
 - [postgres](./postgres/README.md)
 - [pulsar](./pulsar/README.md)
+- [pyroscope](./pyroscope/README.md)
 - [python](./python/README.md)
 - [redis](./redis/README.md)
 - [registry](./registry/README.md)
