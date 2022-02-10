@@ -15,11 +15,11 @@ docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
 .PHONY: default all aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nats nexus3 nginx node openjdk php \
-	postgres pulsar python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
+	postgres pulsar pyroscope python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
 
 all: aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nats nexus3 nginx node openjdk php \
-	postgres pulsar python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
+	postgres pulsar pyroscope python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
 
 default: clean
 
@@ -234,6 +234,12 @@ pulsar-build:
 	bash ${docker_build_script} ${BASEDIR}/pulsar/latest
 pulsar-push:
 	bash ${docker_push_script} ${BASEDIR}/pulsar/latest
+
+pyroscope: pyroscope-build pyroscope-push
+pyroscope-build:
+	bash ${docker_build_script} ${BASEDIR}/pyroscope/latest
+pyroscope-push:
+	bash ${docker_push_script} ${BASEDIR}/pyroscope/latest
 
 python: python-build python-push
 python-build:

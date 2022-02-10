@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  pyroscope:
+    build: .
+    container_name: pyroscope-0.9.0
+    image: v8fg/pyroscope:0.9.0
+    command: ["server"]
+    restart: always
+    ports:
+      - 4040:4040
+    volumes:
+      - ./conf:/etc/pyroscope
+    # environment:
+    #   PYROSCOPE_API_BIND_ADDR: 4040
+    #   PYROSCOPE_CONFIG: ./conf/server.yml
