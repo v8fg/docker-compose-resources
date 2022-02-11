@@ -11,6 +11,8 @@
 - [x] [1.18-upx]((./1.18-upx/Dockerfile))
 - [x] [1.17](./1.17/Dockerfile)
 - [x] [1.17-upx]((./1.17-upx/Dockerfile))
+- [x] [1.17.7](./1.17.7/Dockerfile)
+- [x] [1.17.7-upx]((./1.17.7-upx/Dockerfile))
 - [x] [1.17.6](./1.17.6/Dockerfile)
 - [x] [1.17.6-upx]((./1.17.6-upx/Dockerfile))
 - [x] [1.17.5](./1.17.5/Dockerfile)
@@ -19,6 +21,8 @@
 - [x] [1.17.3-upx]((./1.17.3-upx/Dockerfile))
 - [x] [1.16](./1.16/Dockerfile)
 - [x] [1.16-upx]((./1.16-upx/Dockerfile))
+- [x] [1.16.14](./1.16.14/Dockerfile)
+- [x] [1.16.14-upx]((./1.16.14-upx/Dockerfile))
 - [x] [1.16.12](./1.16.12/Dockerfile)
 - [x] [1.16.12-upx]((./1.16.12-upx/Dockerfile))
 
