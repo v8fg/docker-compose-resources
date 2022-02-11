@@ -12,6 +12,8 @@
 - [x] [20.04-go1.17.5-upx](./20.04-go1.17.5-upx/Dockerfile)
 - [x] [18.04-tf-cpu](./18.04-tf-cpu/Dockerfile)
 - [x] [18.04-tf-cpu-upx](./18.04-tf-cpu-upx/Dockerfile)
+- [x] [18.04-go1.17.7-tf-cpu](./18.04-go1.17.7-tf-cpu/Dockerfile)
+- [x] [18.04-go1.17.7-upx](./18.04-go1.17.7-upx/Dockerfile)
 - [x] [18.04-go1.17.5-tf-cpu](./18.04-go1.17.5-tf-cpu/Dockerfile)
 - [x] [18.04-go1.17.5-upx](./18.04-go1.17.5-upx/Dockerfile)
 - [x] [16.04-go1.17-tf-cpu](./16.04-go1.17-tf-cpu/Dockerfile)
