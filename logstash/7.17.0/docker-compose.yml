@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  logstash:
+    build: .
+    container_name: logstash-7.17.0
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/logstash:7.17.0
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
