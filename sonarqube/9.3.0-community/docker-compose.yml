@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  sonarqube:
+    build: .
+    container_name: sonarqube-9.3.0-community
+    image: v8fg/sonarqube:9.3.0-community
+    user: sonarqube
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "9000:9000"
+    volumes:
+      - "./conf:/opt/sonarqube/conf"
+      - "./data/sonarqube/data:/opt/sonarqube/data"
+      - "./data/sonarqube/extensions:/opt/sonarqube/extensions"
+      - "./data/sonarqube/logs:/opt/sonarqube/logs"
+    # stdin_open: true
+    # tty: true
+    restart: 'always' # no|on-failure[:max-retries]|always|unless-stopped
