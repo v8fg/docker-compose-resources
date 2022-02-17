@@ -13,13 +13,13 @@ docker_build_script=${BASEDIR}/scripts/docker-build.sh
 docker_push_script=${BASEDIR}/scripts/docker-push.sh
 docker_clean_script=${BASEDIR}/scripts/docker-clean.sh
 
-.PHONY: default all aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+.PHONY: default all aerospike alpine bash busybox centos elasticsearch erlang etcd filebrowser flink fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nats nexus3 nginx node openjdk php \
-	postgres pulsar pyroscope python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
+	postgres pulsar pyroscope python redis registry ruby rust sonarqube swift ubuntu zookeeper
 
-all: aerospike alpine bash busybox centos elasticsearch erlang etcd fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
+all: aerospike alpine bash busybox centos elasticsearch erlang etcd filebrowser flink fluentd gcc gitlab gitlab-ce gitlab-runner gitlab-sameersbn \
 	golang golang-upx influxdb jenkins julia kafka kibana logstash mitmproxy mysql nats nexus3 nginx node openjdk php \
-	postgres pulsar pyroscope python redis registry ruby rust filebrowser flink swift ubuntu zookeeper
+	postgres pulsar pyroscope python redis registry ruby rust sonarqube swift ubuntu zookeeper
 
 default: clean
 
@@ -270,6 +270,12 @@ rust-build:
 	bash ${docker_build_script} ${BASEDIR}/rust/latest
 rust-push:
 	bash ${docker_push_script} ${BASEDIR}/rust/latest
+
+sonarqube: sonarqube-build sonarqube-push
+sonarqube-build:
+	bash ${docker_build_script} ${BASEDIR}/sonarqube/latest
+sonarqube-push:
+	bash ${docker_push_script} ${BASEDIR}/sonarqube/latest
 
 swift: swift-build swift-push
 swift-build:
