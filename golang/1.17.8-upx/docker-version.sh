@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=1.17.6
+TAG=1.17.8-upx
 USER=v8fg
 NAME=golang
 
