@@ -79,11 +79,17 @@
 
 ### [Docker Engine Install](https://docs.docker.com/engine/install/)
 
->Recommendation
+#### Tip
 
-- Docker Desktop Version: **2.3.1.0**, Channel: **edge**
-- Engine: 19.03.8+
-- Compose: 1.26.0-rc4+
+- `alpine 3.14+`, need `Docker version` **20.10.3+**
+
+>**Recommendation**
+
+- Docker Desktop Version: **2.3.1.0** [pls watch subscription service agreement](https://www.docker.com/legal/docker-subscription-service-agreement)
+  - Pls use latest version, if install
+- Engine: 20.10.8+
+- Compose: 2.2.2
+- Go: 1.16.6+
 
 - [Install on CentOS](https://docs.docker.com/engine/install/centos/)
 - [Install binaries](https://docs.docker.com/engine/install/binaries/)
