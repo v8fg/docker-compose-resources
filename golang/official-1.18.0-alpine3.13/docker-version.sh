@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=1.16.14-upx
+TAG=official-1.18.0-alpine3.13
 USER=v8fg
 NAME=golang
 
