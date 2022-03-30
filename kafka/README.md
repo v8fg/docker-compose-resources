@@ -4,8 +4,7 @@
 
 - [x] [latest](./latest/Dockerfile)
 - [x] [3-debian-10](./3-debian-10/Dockerfile)
-- [x] [2.13-2.7.1](./2.13-2.7.1/Dockerfile)
-- [x] [2.12-2.5.0](./2.12-2.5.0/Dockerfile)
+- [x] [2.13-2.8.1](./2.13-2.8.1/Dockerfile)
 
 ## Scripts
 

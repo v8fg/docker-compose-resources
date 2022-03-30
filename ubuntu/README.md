@@ -8,6 +8,7 @@
 - [x] [22.04-tf-cpu](./22.04-tf-cpu/Dockerfile)
 - [x] [22.04-go1.18-tf-cpu](./22.04-go1.18-tf-cpu/Dockerfile)
 - [x] [22.04-go1.18-upx](./22.04-go1.18-upx/Dockerfile)
+- [x] [20.04-jdk-11](./20.04-jdk-11/Dockerfile)
 - [x] [20.04-tf-cpu](./20.04-tf-cpu/Dockerfile)
 - [x] [20.04-go1.18-tf-cpu](./20.04-go1.18-tf-cpu/Dockerfile)
 - [x] [20.04-go1.18-upx](./20.04-go1.18-upx/Dockerfile)
