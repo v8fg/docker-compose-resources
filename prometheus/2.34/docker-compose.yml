@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  prometheus:
+    build: .
+    container_name: v8fg-prometheus-2.34.0
+    image: v8fg/prometheus:2.34.0
+    privileged: true
+    init: true
+    ports:
+      - "9090:9090"
+    volumes:
+      - $PWD/data:/prometheus
+      # - $PWD/conf/prometheus.yml:/etc/prometheus/prometheus-docker.yml
+      - $PWD/conf/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always

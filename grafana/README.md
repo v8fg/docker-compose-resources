@@ -3,10 +3,10 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
+- [x] [8.4.4-ubuntu](./8.4.4-ubuntu/Dockerfile)
+- [x] [8.4.4](./8.4.4/Dockerfile)
 - [x] [8.3.1-ubuntu](./8.3.1-ubuntu/Dockerfile)
 - [x] [8.3.1](./8.3.1/Dockerfile)
-- [x] [7.0.3](./7.0.3/Dockerfile)
-- [x] [7.0.3-ubuntu](./7.0.3-ubuntu/Dockerfile)
 
 ## Scripts
 

@@ -7,18 +7,14 @@
 - [x] [1.21-alpine](./1.21-alpine/Dockerfile)
 - [x] [1.21-alpine-perl](./1.21-alpine-perl/Dockerfile)
 - [x] [1.21-perl](./1.21-perl/Dockerfile)
-- [x] [1.21](./1.21/Dockerfile)
-- [x] [1.21.1-alpine](./1.21.1-alpine/Dockerfile)
-- [x] [1.21.1-alpine-perl](./1.21.1-alpine-perl/Dockerfile)
-- [x] [1.21.1-perl](./1.21.1-perl/Dockerfile)
+- [x] [1.21.6](./1.21.6/Dockerfile)
+- [x] [1.21.6-alpine](./1.21.6-alpine/Dockerfile)
+- [x] [1.21.6-alpine-perl](./1.21.6-alpine-perl/Dockerfile)
+- [x] [1.21.6-perl](./1.21.6-perl/Dockerfile)
 - [x] [1.20.0](./1.20.0/Dockerfile)
 - [x] [1.20.0-alpine](./1.20.0-alpine/Dockerfile)
 - [x] [1.20.0-alpine-perl](./1.20.0-alpine-perl/Dockerfile)
 - [x] [1.20.0-perl](./1.20.0-perl/Dockerfile)
-- [x] [1.19.10](./1.19.10/Dockerfile)
-- [x] [1.19.10-alpine](./1.19.10-alpine/Dockerfile)
-- [x] [1.19.10-alpine-perl](./1.19.10-alpine-perl/Dockerfile)
-- [x] [1.19.10-perl](./1.19.10-perl/Dockerfile)
 
 ## Scripts
 
