@@ -6,8 +6,11 @@ services:
     image: v8fg/grafana:8.4.4-ubuntu
     privileged: true
     init: true
-    # environment: 
-      # - GF_SECURITY_ADMIN_PASSWORD=admin
+    environment: 
+      - GF_DEFAULT_INSTANCE_NAME: my-grafana
+      - GF_SECURITY_ADMIN_USER: admin
+      - GF_SECURITY_ADMIN_PASSWORD: admin
+      - GF_PLUGIN_GRAFANA_IMAGE_RENDERER_RENDERING_IGNORE_HTTPS_ERRORS: true
     ports:
       - "3000:3000"
     volumes:
