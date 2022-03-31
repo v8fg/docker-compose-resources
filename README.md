@@ -34,6 +34,8 @@
 - [openjdk](./openjdk/README.md)
 - [php](./php/README.md)
 - [postgres](./postgres/README.md)
+- [prometheus](./prometheus/README.md)
+- [prometheus-gateway](./prometheus-gateway/README.md)
 - [pulsar](./pulsar/README.md)
 - [pyroscope](./pyroscope/README.md)
 - [python](./python/README.md)
