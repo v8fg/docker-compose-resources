@@ -1,6 +1,6 @@
 FROM golang:1.17-alpine3.15
 
-LABEL maintainer="278810732@qq.com" github="https://github.com/xwi88" group="https://github.com/v8fg"
+LABEL author="xwi88" type="go" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
 # Version of upx to be used(without the 'v' prefix)
 # For all releases, see https://github.com/upx/upx/releases

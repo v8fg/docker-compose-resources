@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  ubuntu:
+    build: .
+    container_name: ubuntu-18.04-go1.18.1-upx
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/ubuntu:18.04-go1.18.1-upx
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
