@@ -9,7 +9,7 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-          # - alertmanager:9093
+          - alertmanager:9093
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
@@ -27,3 +27,11 @@ scrape_configs:
 
     static_configs:
       - targets: ["localhost:9090"]
+
+  - job_name: push_gateway
+    scrape_interval: 15s
+    honor_labels: true
+    static_configs:
+      - targets: ['localhost:9091'] # your public ip or your push_gateway node local ip
+        labels:
+          instance: pushgateway
