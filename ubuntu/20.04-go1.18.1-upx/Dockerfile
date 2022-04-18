@@ -10,7 +10,7 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 COPY configs/sources-20.list /etc/apt/sources.list
 
 RUN apt-get update && \
-apt-get install -y build-essential gdb apt-utils && \
+apt-get install -y apt-utils build-essential gdb && \
 apt-get install -y iputils-ping curl bash make wget && \
 apt-get install -y xz-utils tzdata git && \
 apt-get install -y gcc g++ && \
@@ -20,8 +20,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 # timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
-# RUN wget https://golang.org/dl/go1.18.1.linux-amd64.tar.gz && \
-RUN wget https://studygolang.com/dl/golang/go1.18.1.linux-amd64.tar.gz && \
+RUN wget https://golang.google.cn/dl/go1.18.1.linux-amd64.tar.gz && \
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.1.linux-amd64.tar.gz && rm go1.18.1.linux-amd64.tar.gz
 
 ENV PATH=$PATH:/usr/local/go/bin GOPROXY=https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://gocenter.io/,https://proxy.golang.org,direct
