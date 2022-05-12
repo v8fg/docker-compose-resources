@@ -6,19 +6,19 @@
 
 - [x] [latest with upx](./latest/Dockerfile)
 - [x] [22.04-tf-cpu](./22.04-tf-cpu/Dockerfile)
-- [x] [22.04-go1.18.1-tf-cpu](./22.04-go1.18.1-tf-cpu/Dockerfile)
-- [x] [22.04-go1.18.1-upx](./22.04-go1.18.1-upx/Dockerfile)
+- [x] [22.04-go1.18.2-tf-cpu](./22.04-go1.18.2-tf-cpu/Dockerfile)
+- [x] [22.04-go1.18.2-upx](./22.04-go1.18.2-upx/Dockerfile)
 - [x] [20.04-jdk-11](./20.04-jdk-11/Dockerfile)
 - [x] [20.04-tf-cpu](./20.04-tf-cpu/Dockerfile)
-- [x] [20.04-go1.18.1-tf-cpu](./20.04-go1.18.1-tf-cpu/Dockerfile)
-- [x] [20.04-go1.18.1-upx](./20.04-go1.18.1-upx/Dockerfile)
+- [x] [20.04-go1.18.2-tf-cpu](./20.04-go1.18.2-tf-cpu/Dockerfile)
+- [x] [20.04-go1.18.2-upx](./20.04-go1.18.2-upx/Dockerfile)
 - [x] [18.04](./18.04/Dockerfile)
 - [x] [18.04-tf-cpu](./18.04-tf-cpu/Dockerfile)
 - [x] [18.04-tf-cpu-upx](./18.04-tf-cpu-upx/Dockerfile)
-- [x] [18.04-go1.18.1-tf-cpu](./18.04-go1.18.1-tf-cpu/Dockerfile)
-- [x] [18.04-go1.18.1-upx](./18.04-go1.18.1-upx/Dockerfile)
-- [x] [18.04-go1.17.9-tf-cpu](./18.04-go1.17.9-tf-cpu/Dockerfile)
-- [x] [18.04-go1.17.9-upx](./18.04-go1.17.9-upx/Dockerfile)
+- [x] [18.04-go1.18.2-tf-cpu](./18.04-go1.18.2-tf-cpu/Dockerfile)
+- [x] [18.04-go1.18.2-upx](./18.04-go1.18.2-upx/Dockerfile)
+- [x] [18.04-go1.17.10-tf-cpu](./18.04-go1.17.10-tf-cpu/Dockerfile)
+- [x] [18.04-go1.17.10-upx](./18.04-go1.17.10-upx/Dockerfile)
 
 ## Scripts
 
