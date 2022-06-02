@@ -2,10 +2,14 @@ version: '3.7'
 services:
   alpine:
     build: .
-    container_name: alpine-3.12
+    container_name: alpine-3.16-kit
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/alpine:3.12
+    image: v8fg/alpine:3.16-kit
+    dns: 
+      - 8.8.8.8
+      - 8.8.4.4
+      - 114.114.114.114
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
