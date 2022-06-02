@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine3.16
+FROM golang:1.18.3-alpine3.16
 
 LABEL author="xwi88" type="go" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
