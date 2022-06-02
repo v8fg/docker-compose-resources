@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=3.12
+TAG=3.16
 USER=v8fg
 NAME=alpine
 
