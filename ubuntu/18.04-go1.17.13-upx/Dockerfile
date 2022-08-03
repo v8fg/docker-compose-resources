@@ -20,6 +20,11 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 # timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
+RUN wget https://golang.google.cn/dl/go1.17.13.linux-amd64.tar.gz && \
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.13.linux-amd64.tar.gz && rm go1.17.13.linux-amd64.tar.gz
+
+ENV PATH=$PATH:/usr/local/go/bin GOPROXY=https://goproxy.cn,https://goproxy.io/,https://mirrors.aliyun.com/goproxy/,https://gocenter.io/,https://proxy.golang.org,direct
+
 
 # Version of upx to be used(without the 'v' prefix)
 # For all releases, see https://github.com/upx/upx/releases
@@ -31,7 +36,3 @@ ARG UPX_VERSION=3.96
 # wget cache
 RUN wget https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz -O /tmp/upx.tar.xy && \
 tar -xJOf /tmp/upx.tar.xy upx-${UPX_VERSION}-amd64_linux/upx > /bin/upx && chmod +x /bin/upx && rm /tmp/upx.tar.xy
-
-
-# Google libtensorflow
-RUN wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz && tar -C /usr/local -xzf libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz && ldconfig && rm libtensorflow-cpu-linux-x86_64-2.3.0.tar.gz
