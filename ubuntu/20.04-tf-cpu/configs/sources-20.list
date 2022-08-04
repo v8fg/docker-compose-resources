@@ -1,5 +1,5 @@
 #清华源
-# deb cdrom:[Ubuntu 20.04 LTS _jammy Xerus_ - Release amd64 (20160420.1)]/ focal main restricted
+# deb cdrom:[Ubuntu 20.04 LTS _focal Xerus_ - Release amd64 (20160420.1)]/ focal main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal universe
@@ -11,9 +11,20 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security universe
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security multiverse
 
+#中科大
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
 
 #阿里源
-# deb cdrom:[Ubuntu 20.04 LTS _jammy Xerus_ - Release amd64 (20160420.1)]/ focal main restricted
+# deb cdrom:[Ubuntu 20.04 LTS _focal Xerus_ - Release amd64 (20160420.1)]/ focal main restricted
 deb-src http://archive.ubuntu.com/ubuntu focal main restricted #Added by software-properties
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted
 deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted multiverse universe #Added by software-properties
