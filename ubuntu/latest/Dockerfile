@@ -4,6 +4,8 @@ LABEL author="xwi88" type="ubuntu" github="https://github.com/xwi88" group="http
 
 ENV TZ=Asia/Shanghai DEBIAN_FRONTEND=noninteractive
 
+RUN apt-get update && apt-get install -y ca-certificates
+
 # bak
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 # replace sources.list
