@@ -11,6 +11,17 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security universe
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security multiverse
 
+#中科大
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
 
 #阿里源
 # deb cdrom:[Ubuntu 22.04 LTS _jammy Xerus_ - Release amd64 (20160420.1)]/ jammy main restricted
