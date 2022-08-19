@@ -4,6 +4,7 @@
 
 - [x] [latest](./latest/Dockerfile)
 - [x] [1-alpine](./1-alpine/Dockerfile)
+- [x] [1.63-alpine](./1.63-alpine/Dockerfile)
 - [x] [1.59-alpine](./1.59-alpine/Dockerfile)
 
 ## Scripts
