@@ -3,7 +3,9 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
+- [x] [15beta3-alpine](./14-alpine/Dockerfile)
 - [x] [14-alpine](./14-alpine/Dockerfile)
+- [x] [14.5-alpine](./14.5-alpine/Dockerfile)
 - [x] [13-alpine](./13-alpine/Dockerfile)
 - [x] [13.6-alpine](./13.6-alpine/Dockerfile)
 
