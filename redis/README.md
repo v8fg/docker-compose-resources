@@ -3,10 +3,12 @@
 ## Images
 
 - [x] [latest](./latest/Dockerfile)
-- [x] [7.0-rc](./7.0-rc/Dockerfile)
-- [x] [7.0-rc-alpine3.15](./7.0-rc-alpine3.15/Dockerfile)
+- [x] [7.0.4](./7.0.4/Dockerfile)
+- [x] [7.0.4-alpine3.16](./7.0.4-alpine3.16/Dockerfile)
+- [x] [7](./7/Dockerfile)
+- [x] [7-alpine3.16](./7-alpine3.16/Dockerfile)
 - [x] [6.2-alpine](./6.2/Dockerfile)
-- [x] [6.2-alpine3.15](./6.2-alpine3.15/Dockerfile)
+- [x] [6.2-alpine3.16](./6.2-alpine3.16/Dockerfile)
 
 ## Scripts
 

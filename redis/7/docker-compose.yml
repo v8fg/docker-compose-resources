@@ -2,8 +2,8 @@ version: '3.8'
 services:
   redis:
     build: .
-    container_name: redis-7.0-rc
-    image: v8fg/redis:7.0-rc
+    container_name: redis-
+    image: v8fg/redis:7
     command: ["redis-server", "--appendonly", "yes"]
     # hostname: redis
     restart: always
