@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=6.2-alpine3.15
+TAG=7.0.4
 USER=v8fg
 NAME=redis
 

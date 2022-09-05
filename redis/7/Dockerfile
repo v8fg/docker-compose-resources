@@ -1,4 +1,4 @@
-FROM redis:7.0-rc-alpine3.15
+FROM redis:7
 
 LABEL author="xwi88" type="redis" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
