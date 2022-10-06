@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM v8fg/ubuntu:20.04
 
 ENV TZ=Asia/Shanghai DEBIAN_FRONTEND=noninteractive
 
