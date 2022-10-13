@@ -1,4 +1,4 @@
-FROM bitnami/kafka:latest
+FROM bitnami/kafka:3.3.1
 
 LABEL author="xwi88" type="kafka" github="https://github.com/xwi88" group="https://github.com/v8fg"
 

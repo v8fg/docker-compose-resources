@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=latest
+TAG=3.3-debian-11
 USER=v8fg
 NAME=kafka
 

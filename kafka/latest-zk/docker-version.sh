@@ -3,7 +3,7 @@
 # image info, version may auto update
 TAG=latest
 USER=v8fg
-NAME=kafka
+NAME=kafka-zk
 
 REPOSITORY=${USER}/${NAME}
 # image with tag, use to push image
