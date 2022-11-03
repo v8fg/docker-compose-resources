@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 LABEL author="xwi88" type="ubuntu" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y ca-certificates
 # bak
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 # replace sources.list
-COPY configs/sources-22.list /etc/apt/sources.list
+COPY configs/sources-20.list /etc/apt/sources.list
 
 RUN apt-get update && \
 apt-get install -y apt-utils && \

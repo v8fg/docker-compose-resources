@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  ubuntu:
+    build: .
+    container_name: ubuntu-22.04-go1.19.2-tf-cpu
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/ubuntu:22.04-go1.19.2-tf-cpu
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
