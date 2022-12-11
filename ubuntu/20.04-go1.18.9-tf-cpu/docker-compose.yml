@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  golang:
+  ubuntu:
     build: .
-    container_name: golang-official-1.19.4-alpine3.13
+    container_name: ubuntu-20.04-go1.18.9-tf-cpu
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/golang:official-1.19.4-alpine3.13
+    image: v8fg/ubuntu:20.04-go1.18.9-tf-cpu
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
