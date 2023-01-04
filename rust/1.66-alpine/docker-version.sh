@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=1.59-alpine
+TAG=1.66-alpine
 USER=v8fg
 NAME=rust
 

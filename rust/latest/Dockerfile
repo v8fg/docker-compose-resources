@@ -1,4 +1,4 @@
-FROM rust:1.63-alpine3.16
+FROM rust:1.66-alpine3.17
 
 LABEL author="xwi88" type="rust" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
