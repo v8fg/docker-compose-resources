@@ -1,0 +1,13 @@
+* Mounting host path /Users/will.wang/workspace into VM as /Users/will.wang/workspace ...
+  - Mount type:   
+  - User ID:      docker
+  - Group ID:     docker
+  - Version:      9p2000.L
+  - Message Size: 262144
+  - Permissions:  755 (-rwxr-xr-x)
+  - Options:      map[]
+  - Bind Address: 192.168.64.1:58610
+* Userspace file server: ufs starting
+* Successfully mounted /Users/will.wang/workspace to /Users/will.wang/workspace
+
+* NOTE: This process must stay alive for the mount to be accessible ...
