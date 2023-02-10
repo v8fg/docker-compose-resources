@@ -9,6 +9,6 @@ ARG UPX_VERSION=3.96
 # Fetch upx, decompress it, make it executable.
 ADD https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz /tmp/upx.tar.xy
 
-RUN apk add --no-cache tzdata git make bash && \
-tar -xJOf /tmp/upx.tar.xy upx-${UPX_VERSION}-amd64_linux/upx > /bin/upx \
+RUN apk add --no-cache tzdata git make bash && \ 
+tar -xJOf /tmp/upx.tar.xy upx-${UPX_VERSION}-amd64_linux/upx > /bin/upx \ 
 && chmod +x /bin/upx && rm /tmp/upx.tar.xy
