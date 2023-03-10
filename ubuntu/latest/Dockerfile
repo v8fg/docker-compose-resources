@@ -24,7 +24,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
 
 # Version of upx to be used(without the 'v' prefix)
 # For all releases, see https://github.com/upx/upx/releases
-ARG UPX_VERSION=3.96
+ARG UPX_VERSION=4.0.2
 
 # Fetch upx, decompress it, make it executable.
 # ADD https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz /tmp/upx.tar.xy
