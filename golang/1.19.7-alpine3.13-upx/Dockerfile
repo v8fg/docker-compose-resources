@@ -1,4 +1,4 @@
-FROM golang:1.20-alpine3.17
+FROM v8fg/golang:official-1.19.7-alpine3.13
 
 LABEL author="xwi88" type="go" github="https://github.com/xwi88" group="https://github.com/v8fg"
 
