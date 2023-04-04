@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  chatgpt-next-web:
+    build: .
+    container_name: chatgpt-next-web-1.9.2
+    image: v8fg/chatgpt-next-web:1.9.2
+    environment:
+      TZ: Asia/Shanghai
+      OPENAI_API_KEY: # Your openai api key.
+      CODE: # Access passsword, separated by comma.
+      BASE_URL: # proxy api URL, default: api.openai.com, without scheme
+      # PROTOCOL: https # http | https  
+    restart: always
+    ports:
+      - 3690:3000
