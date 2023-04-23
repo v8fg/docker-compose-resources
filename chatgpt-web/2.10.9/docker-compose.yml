@@ -1,0 +1,23 @@
+version: '3'
+services:
+  chatgpt-web:
+    build: .
+    container_name: chatgpt-web-2.10.9
+    image: v8fg/chatgpt-web:2.10.9
+    environment:
+      TZ: Asia/Shanghai
+      OPENAI_API_KEY: # Your openai api key.
+      OPENAI_ACCESS_TOKEN: # Choose either OPENAI_API_KEY or OPENAI_ACCESS_TOKEN
+      AUTH_SECRET_KEY: # Access passsword.
+      # OPENAI_API_MODEL: # default gpt-3.5-turbo
+      OPENAI_API_BASE_URL: # proxy api URL, default: https://api.openai.com
+      API_REVERSE_PROXY: '' # default https://bypass.duti.tech/api/conversation
+      # MAX_REQUEST_PER_HOUR: 
+      TIMEOUT_MS: 90000
+      # SOCKS_PROXY_HOST: 
+      # SOCKS_PROXY_PORT: 
+      # HTTPS_PROXY: # support: http | https | socks5
+      # ALL_PROXY: # support: http | https | socks5
+    restart: always
+    ports:
+      - 3630:3002
