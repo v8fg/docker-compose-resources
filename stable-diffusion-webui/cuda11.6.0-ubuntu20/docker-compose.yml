@@ -1,0 +1,33 @@
+version: '3'
+services:
+  cuda-ubuntu:
+    build: .
+    container_name: sd-cuda11.6.0-ubuntu20
+    image: v8fg/stable-diffusion-webui:sd-cuda11.6.0-ubuntu20
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all # all or integer
+              # device_ids: ['0', '3']
+              capabilities: [gpu]
+    environment:
+      TZ: Asia/Shanghai
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+      NVIDIA_VISIBLE_DEVICES: all
+    ports:
+      - 7860:7860
+    volumes:
+      - /root/stable-diffusion-data:/stable-diffusion-webui/sd-data # include dirs: embeddings, extensions, odels, cache.json, config.json, ui-config.json, etc.
+      - /root/stable-diffusion-data/outputs:/stable-diffusion-webui/outputs
+      - /root/stable-diffusion-data/repositories:/stable-diffusion-webui/repositories
+      - /root/stable-diffusion-data/models:/stable-diffusion-webui/models # new download models will still be models? issue?
+    # command: ["bash", "webui.sh", "--allow-code", "--listen", "--xformers", "--api", "--enable-insecure-extension-access"]
+    # command: 'bash webui.sh --allow-code --listen --xformers --api --enable-insecure-extension-access' # --nowebui
+    # command: 'bash webui.sh --allow-code --administrator --cors-allow-origins * --enable-console-prompts --listen --xformers --api --enable-insecure-extension-access' # --nowebui
+    command: 'bash webui.sh --data-dir sd-data --allow-code --administrator --cors-allow-origins * --precision full --no-half --listen --xformers --api --enable-insecure-extension-access' # --nowebui
+    # user: 1000:1000
+    restart: always
