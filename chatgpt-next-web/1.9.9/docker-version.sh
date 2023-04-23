@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # image info, version may auto update
-TAG=1.9.2
+TAG=1.9.9
 USER=v8fg
 NAME=chatgpt-next-web
 
