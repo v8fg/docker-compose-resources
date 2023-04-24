@@ -4,6 +4,7 @@
 
 - [x] [latest](./latest/Dockerfile)
 - [x] [v2](./v2/Dockerfile)
+- [x] [s6](./s6/Dockerfile)
 - [x] [v2-amd64](./v2-amd64/Dockerfile)
 
 ## Scripts
