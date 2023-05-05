@@ -1,0 +1,12 @@
+version: '3'
+services:
+  test:
+    image: nvidia/cuda:11.4.0-base-centos8
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
