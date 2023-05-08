@@ -10,9 +10,10 @@ services:
     volumes:
       # - "~/:/srv"
       - "~/software:/srv"
+      - "~/database:/database"
       - "./conf/filebrowser.json:/.filebrowser.json"
     image: v8fg/filebrowser:v2-amd64
     stdin_open: true
     tty: true 
-    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    restart: 'always' # no|on-failure[:max-retries]|always|unless-stopped
     command: [ "/bin/sh"]
