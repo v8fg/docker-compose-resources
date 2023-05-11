@@ -1,0 +1,23 @@
+version: '3'
+services:
+  sd-cpu-ubuntu:
+    build: .
+    container_name: sd-cpu-ubuntu23
+    image: v8fg/stable-diffusion-webui:sd-cpu-ubuntu23
+    stdin_open: true
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 7860:7860
+    volumes:
+      - /data/stable-diffusion-data:/stable-diffusion-webui/sd-data # include dirs: embeddings, extensions, odels, cache.json, config.json, ui-config.json, etc.
+      - /data/stable-diffusion-data/outputs:/stable-diffusion-webui/outputs
+      - /data/stable-diffusion-data/repositories:/stable-diffusion-webui/repositories
+      - /data/stable-diffusion-data/models:/stable-diffusion-webui/models # new download models will still be models? issue?
+    # command: ["bash", "webui.sh", "--allow-code", "--listen", "--xformers", "--api", "--enable-insecure-extension-access"]
+    # command: 'bash webui.sh --allow-code --listen --api --enable-insecure-extension-access' # --nowebui
+    # command: 'bash webui.sh --allow-code --administrator --cors-allow-origins * --enable-console-prompts --listen --api --enable-insecure-extension-access' # --nowebui
+    command: 'bash webui.sh --data-dir sd-data --allow-code --administrator --cors-allow-origins * --precision full --no-half --use-cpu all --listen --api --enable-insecure-extension-access' # --nowebui
+    # user: 1000:1000
+    restart: always
