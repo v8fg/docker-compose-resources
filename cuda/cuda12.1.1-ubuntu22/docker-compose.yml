@@ -1,0 +1,28 @@
+version: '3'
+services:
+  cuda-ubuntu:
+    build: .
+    container_name: cuda-12.1.1-ubuntu22
+    image: v8fg/cuda-12.1.1-ubuntu22
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all # all or integer
+              # device_ids: ['0', '3']
+              capabilities: [gpu]
+    environment:
+      TZ: Asia/Shanghai
+      JITTOR_HOME: /data
+      # NVIDIA_DRIVER_CAPABILITIES: compute,utility
+      # NVIDIA_VISIBLE_DEVICES: all
+    ports:
+      - 51234:51234
+    volumes:
+      - /data/jittor_data:/data
+    user: 1000:1000
+    command: ["python3", "cli_demo.py" , "chatglm"]
+    restart: always
