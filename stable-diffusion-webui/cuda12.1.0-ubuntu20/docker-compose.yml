@@ -21,10 +21,10 @@ services:
     ports:
       - 7860:7860
     volumes:
-      - /root/stable-diffusion-data:/stable-diffusion-webui/sd-data # include dirs: embeddings, extensions, odels, cache.json, config.json, ui-config.json, etc.
-      - /root/stable-diffusion-data/outputs:/stable-diffusion-webui/outputs
-      - /root/stable-diffusion-data/repositories:/stable-diffusion-webui/repositories
-      - /root/stable-diffusion-data/models:/stable-diffusion-webui/models # new download models will still be models? issue?
+      - /data/stable-diffusion-data:/stable-diffusion-webui/sd-data # include dirs: embeddings, extensions, odels, cache.json, config.json, ui-config.json, etc.
+      - /data/stable-diffusion-data/outputs:/stable-diffusion-webui/outputs
+      - /data/stable-diffusion-data/repositories:/stable-diffusion-webui/repositories
+      - /data/stable-diffusion-data/models:/stable-diffusion-webui/models # new download models will still be models? issue?
     # command: ["bash", "webui.sh", "--allow-code", "--listen", "--xformers", "--api", "--enable-insecure-extension-access"]
     # command: 'bash webui.sh --allow-code --listen --xformers --api --enable-insecure-extension-access' # --nowebui
     # command: 'bash webui.sh --allow-code --administrator --cors-allow-origins * --enable-console-prompts --listen --xformers --api --enable-insecure-extension-access' # --nowebui

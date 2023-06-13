@@ -13,6 +13,7 @@
 - [x] [cuda11.4.1-ubuntu20](./cuda11.4.1-ubuntu20/Dockerfile)
 - [x] [sd-cuda12.1-ubuntu20](./sd-cuda12.1-ubuntu20/Dockerfile)
 - [x] [sd-cuda11.6-ubuntu20](./sd-cuda11.6-ubuntu20/Dockerfile)
+- [x] [sd-cpu-ubuntu23](./sd-cpu-ubuntu23/Dockerfile)
 
 ## Scripts
 
