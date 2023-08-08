@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  golang:
+    build: .
+    container_name: golang-official-1.20.7-alpine3.13
+    environment:
+      TZ: Asia/Shanghai
+    image: v8fg/golang:official-1.20.7-alpine3.13
+    stdin_open: true
+    tty: true 
+    restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
+    command: [ "/bin/bash"]
