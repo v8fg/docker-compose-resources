@@ -10,20 +10,20 @@ If you use `alpine3.14+`, maybe occur `operation issues`, pls check your `docker
 
 - [x] [latest](./latest/Dockerfile)
 - [x] [latest-upx](./latest-upx/Dockerfile)
+- [x] [official-1.21.0-alpine3.13](official-1.21.0-alpine3.13/Dockerfile)
 - [x] [official-1.20.7-alpine3.13](official-1.20.7-alpine3.13/Dockerfile)
-- [x] [official-1.19.12-alpine3.13](official-1.19.12-alpine3.13/Dockerfile)
+- [x] [1.21](./1.21/Dockerfile)
+- [x] [1.21-upx](./1.21-upx/Dockerfile)
+- [x] [1.21.0](1.21.0/Dockerfile)
+- [x] [1.21.0-upx](1.21.0-upx/Dockerfile)
+- [x] [1.21.0-alpine3.13](1.21.0-alpine3.13/Dockerfile)
+- [x] [1.21.0-alpine3.13-upx](1.21.0-alpine3.13-upx/Dockerfile)
 - [x] [1.20](./1.20/Dockerfile)
 - [x] [1.20-upx](./1.20-upx/Dockerfile)
 - [x] [1.20.7](1.20.7/Dockerfile)
 - [x] [1.20.7-upx](1.20.7-upx/Dockerfile)
 - [x] [1.20.7-alpine3.13](1.20.7-alpine3.13/Dockerfile)
 - [x] [1.20.7-alpine3.13-upx](1.20.7-alpine3.13-upx/Dockerfile)
-- [x] [1.19](./1.19/Dockerfile)
-- [x] [1.19-upx](./1.19-upx/Dockerfile)
-- [x] [1.19.12](1.19.12/Dockerfile)
-- [x] [1.19.12-upx](1.19.12-upx/Dockerfile)
-- [x] [1.19.12-alpine3.13](1.19.12-alpine3.13/Dockerfile)
-- [x] [1.19.12-alpine3.13-upx](1.19.12-alpine3.13-upx/Dockerfile)
 
 ## Scripts
 
