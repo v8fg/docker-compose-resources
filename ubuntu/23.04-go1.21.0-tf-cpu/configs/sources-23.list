@@ -1,0 +1,42 @@
+#清华源
+# deb cdrom:[Ubuntu 23.04 LTS lunar Xerus_ - Release amd64 (20160420.1)]/ lunar main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-updates main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-updates universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-updates multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-backports main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-security main restricted
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-security universe
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ lunar-security multiverse
+
+#中科大
+deb https://mirrors.ustc.edu.cn/ubuntu/ lunar main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ lunar main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ lunar-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ lunar-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ lunar-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ lunar-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ lunar-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ lunar-security main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ lunar-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ lunar-proposed main restricted universe multiverse
+
+#阿里源
+# deb cdrom:[Ubuntu 23.04 LTS lunar Xerus_ - Release amd64 (20160420.1)]/ lunar main restricted
+deb-src http://archive.ubuntu.com/ubuntu lunar main restricted #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ lunar main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ lunar main restricted multiverse universe #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ lunar-updates main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ lunar-updates main restricted multiverse universe #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ lunar universe
+deb http://mirrors.aliyun.com/ubuntu/ lunar-updates universe
+deb http://mirrors.aliyun.com/ubuntu/ lunar multiverse
+deb http://mirrors.aliyun.com/ubuntu/ lunar-updates multiverse
+deb http://mirrors.aliyun.com/ubuntu/ lunar-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ lunar-backports main restricted universe multiverse #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ lunar-security main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ lunar-security main restricted multiverse universe #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ lunar-security universe
+deb http://mirrors.aliyun.com/ubuntu/ lunar-security multiverse

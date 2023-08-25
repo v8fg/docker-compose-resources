@@ -2,10 +2,10 @@ version: '3.7'
 services:
   ubuntu:
     build: .
-    container_name: ubuntu-latest
+    container_name: ubuntu-23.04-go1.20.7-upx
     environment:
       TZ: Asia/Shanghai
-    image: v8fg/ubuntu:23.04
+    image: v8fg/ubuntu:23.04-go1.20.7-upx
     stdin_open: true
     tty: true 
     restart: 'no' # no|on-failure[:max-retries]|always|unless-stopped
