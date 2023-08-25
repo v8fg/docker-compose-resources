@@ -5,7 +5,12 @@
 >`ubuntu:22.04` maybe have some issues, ex: `ls`, warning use latest
 
 - [x] [latest with upx](./latest/Dockerfile)
-- [x] [22.04-tf-cpu](./22.04-tf-cpu/Dockerfile)
+- [x] [23.04-tf-cpu](./23.04-tf-cpu/Dockerfile)
+- [x] [23.04-go1.21.0-tf-cpu](23.04-go1.21.0-tf-cpu/Dockerfile)
+- [x] [23.04-go1.21.0-upx](23.04-go1.21.0-upx/Dockerfile)
+- [x] [23.04-go1.20.7-tf-cpu](23.04-go1.20.7-tf-cpu/Dockerfile)
+- [x] [23.04-go1.20.7-upx](23.04-go1.20.7-upx/Dockerfile)
+- [x] [23.04-tf-cpu](./23.04-tf-cpu/Dockerfile)
 - [x] [22.04-go1.21.0-tf-cpu](22.04-go1.21.0-tf-cpu/Dockerfile)
 - [x] [22.04-go1.21.0-upx](22.04-go1.21.0-upx/Dockerfile)
 - [x] [22.04-go1.20.7-tf-cpu](22.04-go1.20.7-tf-cpu/Dockerfile)
