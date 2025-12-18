@@ -1,0 +1,14 @@
+services:
+  redis-latest:
+    image: v8fg/redis:latest
+    container_name: redis-latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    # hostname: redis
+    ports:
+      - 16379:6379
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/redis:/data
+      #- ./conf/redis.conf:/etc/redis.conf

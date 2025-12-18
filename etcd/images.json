@@ -1,0 +1,24 @@
+[
+  {
+    "service": "etcd",
+    "version": "latest",
+    "container": "kubesphere-etcd-3.6.4-0",
+    "remove_image": false,
+    "base_image": "kubesphere/etcd:3.6.4-0",
+    "my_image": "v8fg/etcd:latest",
+    "tz": "Asia/Shanghai",
+    "current_update": "2025-12-17 22:06:58",
+    "status": "done"
+  },
+  {
+    "service": "etcd",
+    "version": "3.6.4-0",
+    "container": "kubesphere-etcd-3.6.4-0",
+    "remove_image": false,
+    "base_image": "kubesphere/etcd:3.6.4-0",
+    "my_image": "v8fg/etcd:3.6.4-0",
+    "tz": "Asia/Shanghai",
+    "current_update": "2025-12-17 23:33:10",
+    "status": "done"
+  }
+]

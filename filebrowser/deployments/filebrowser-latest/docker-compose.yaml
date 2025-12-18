@@ -1,0 +1,17 @@
+services:
+  filebrowser-latest:
+    image: v8fg/filebrowser:latest
+    container_name: filebrowser-latest
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 16379:6379
+    volumes:
+      # - "~/:/srv"
+      - "~/software:/srv"
+      - "~/database:/database"
+      - "./conf/filebrowser.json:/.filebrowser.json"
+    stdin_open: true
+    tty: true 
+    command: [ "/bin/sh"]

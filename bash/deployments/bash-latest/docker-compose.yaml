@@ -1,0 +1,7 @@
+services:
+  bash-latest:
+    image: v8fg/bash:latest
+    container_name: bash-latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai

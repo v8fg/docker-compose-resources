@@ -1,0 +1,14 @@
+services:
+  ${v_container}:
+    image: ${v_my_image}
+    container_name: ${v_container}
+    restart: always
+    environment:
+      - TZ=${v_tz}
+    # hostname: redis
+    ports:
+      - 16379:6379
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/redis:/data
+      #- ./conf/redis.conf:/etc/redis.conf

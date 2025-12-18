@@ -1,18 +1,13 @@
-# Docker Compose Resources
+# Service Summary: etcd
 
-## Images
+### 📊 Execution Metrics
+- **📅 Sync Time:** 2025-12-17 23:33:10
+- **📦 Total Images Scanned:** 2
+- **✅ Newly Processed:** 1
+- **⏩ Skipped:** 1
 
-- [x] [latest](./latest/Dockerfile)
-- [x] [3](./3/Dockerfile)
-- [x] [3-debian-10](./3-debian-10/Dockerfile)
-- [x] [3.5.1](./3.5.1/Dockerfile)
-
-## Scripts
-
->ref: [Makefile](./Makefile)
-
-- build and push image: `make all [tag=latest]`
-- build image: `make build [tag=latest]`
-- push image: `make push [tag=latest]`
-- run container: `make run [tag=latest]`
-- list all tags: `make | make list`
+### 🛠 Image Details
+| Service | Image | Status | Last Push | Update Result |
+| :--- | :--- | :---: | :--- | :--- |
+| etcd | `v8fg/etcd:latest` | ✅ Done | 2025-12-17 22:06:58 | No Change |
+| etcd | `v8fg/etcd:3.6.4-0` | ✅ Done | 2025-12-17 23:33:10 | Update ✨ |

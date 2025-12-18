@@ -1,0 +1,7 @@
+services:
+  golang-1.25.5-alpine-3.23-upx:
+    image: v8fg/golang:1.25.5-alpine3.23-upx
+    container_name: golang-1.25.5-alpine-3.23-upx
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai

@@ -1,0 +1,9 @@
+services:
+  kafka-latest:
+    image: v8fg/kafka:latest
+    container_name: kafka-latest
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 19092:9092

@@ -1,0 +1,9 @@
+services:
+  ${v_container}:
+    image: ${v_my_image}
+    container_name: ${v_container}
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: ${v_tz}
+    ports:
+      - 19092:9092

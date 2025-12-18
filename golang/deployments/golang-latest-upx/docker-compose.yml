@@ -1,0 +1,7 @@
+services:
+  golang-latest-upx:
+    image: v8fg/golang:latest-upx
+    container_name: golang-latest-upx
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai

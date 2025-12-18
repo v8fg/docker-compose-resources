@@ -1,0 +1,28 @@
+services:
+  postgres-alpine3.23:
+    image: v8fg/postgres:alpine3.23
+    container_name: postgres-alpine3.23
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    # set shared memory limit when using docker compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      TZ: Asia/Shanghai
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - 15432:5432
+    stdin_open: true
+    tty: true 
+    volumes:
+      - $PWD/data/postgresql/data:/var/lib/postgresql/data
+    
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 18080:8080

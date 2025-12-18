@@ -1,0 +1,28 @@
+[
+    {
+        "service": "fluent-bit",
+        "version": "latest",
+        "container": "fluent-bit-4.2.1-amd64",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "fluent/fluent-bit:4.2.1-amd64",
+        "my_image": "v8fg/fluent-bit:latest",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "",
+        "compose_tpl": "",
+        "current_update": "2025-12-18 23:02:28"
+    },
+    {
+        "service": "fluent-bit",
+        "version": "4.2.1-amd64",
+        "container": "fluent-bit-4.2.1-amd64",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "fluent/fluent-bit:4.2.1-amd64",
+        "my_image": "v8fg/fluent-bit:4.2.1-amd64",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "",
+        "compose_tpl": "",
+        "current_update": "2025-12-18 23:02:38"
+    }
+]

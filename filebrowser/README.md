@@ -1,18 +1,13 @@
-# Docker Compose Resources
+# Service Summary: filebrowser
 
-## Images
+### 📊 Execution Metrics
+- **📅 Sync Time:** 2025-12-18 23:01:45
+- **📦 Total Images Scanned:** 2
+- **✅ Newly Processed:** 2
+- **⏩ Skipped:** 0
 
-- [x] [latest](./latest/Dockerfile)
-- [x] [v2](./v2/Dockerfile)
-- [x] [s6](./s6/Dockerfile)
-- [x] [v2-amd64](./v2-amd64/Dockerfile)
-
-## Scripts
-
->ref: [Makefile](./Makefile)
-
-- build and push image: `make all [tag=latest]`
-- build image: `make build [tag=latest]`
-- push image: `make push [tag=latest]`
-- run container: `make run [tag=latest]`
-- list all tags: `make | make list`
+### 🛠 Image Details
+| Service | Image | Status | Last Push | Update Result |
+| :--- | :--- | :---: | :--- | :--- |
+| filebrowser | `v8fg/filebrowser:latest` | ✅ Done | 2025-12-18 23:01:45 | Update ✨ |
+| filebrowser | `v8fg/filebrowser:v2.52.0` | ✅ Done | 2025-12-18 23:01:45 | Update ✨ |

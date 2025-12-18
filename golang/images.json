@@ -1,0 +1,74 @@
+[
+    {
+        "service": "golang",
+        "version": "1.25.5",
+        "container": "golang-latest-upx",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "golang:1.25.5-alpine3.23",
+        "my_image": "v8fg/golang:latest-upx",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "specify/Dockerfile-upx.template",
+        "compose_tpl": "",
+        "current_update": "2025-12-17 20:43:34"
+    },
+    {
+        "service": "golang",
+        "version": "1.25.5",
+        "container": "golang-latest",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "golang:1.25.5-alpine3.23",
+        "my_image": "v8fg/golang:latest",
+        "tz": "Asia/Shanghai",
+        "current_update": "2025-12-17 16:04:39"
+    },
+    {
+        "service": "golang",
+        "version": "1.25.5",
+        "container": "golang-1.25.5-alpine-3.23",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "golang:1.25.5-alpine3.23",
+        "my_image": "v8fg/golang:1.25.5-alpine3.23",
+        "tz": "Asia/Shanghai",
+        "current_update": "2025-12-17 16:04:51"
+    },
+    {
+        "service": "golang",
+        "version": "1.25.5",
+        "container": "golang-1.25.5-alpine-3.23-upx",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "golang:1.25.5-alpine3.23",
+        "my_image": "v8fg/golang:1.25.5-alpine3.23-upx",
+        "dockerfile_tpl": "specify/Dockerfile-upx.template",
+        "compose_tpl": "",
+        "tz": "Asia/Shanghai",
+        "current_update": "2025-12-17 20:43:46"
+    },
+    {
+        "service": "golang",
+        "version": "1.24.11",
+        "container": "golang-1.24.11-alpine-3.23",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "golang:1.24.11-alpine3.23",
+        "my_image": "v8fg/golang:1.24.11-alpine3.23",
+        "tz": "Asia/Shanghai",
+        "current_update": "2025-12-17 19:43:12"
+    },
+    {
+        "service": "golang",
+        "version": "1.24.11",
+        "container": "golang-1.24.11-alpine-3.23-upx",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "golang:1.24.11-alpine3.23",
+        "my_image": "v8fg/golang:1.24.11-alpine3.23-upx",
+        "dockerfile_tpl": "specify/Dockerfile-upx.template",
+        "compose_tpl": "",
+        "tz": "Asia/Shanghai",
+        "current_update": "2025-12-17 20:46:48"
+    }
+]

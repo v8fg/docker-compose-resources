@@ -1,0 +1,28 @@
+[
+    {
+        "service": "kafka",
+        "version": "latest",
+        "container": "kafka-latest",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "ubuntu/kafka:latest",
+        "my_image": "v8fg/kafka:latest",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "",
+        "compose_tpl": "",
+        "current_update": "2025-12-19 00:39:49"
+    },
+    {
+        "service": "kafka",
+        "version": "native-4.1.1",
+        "container": "kafka-native-4.1.1",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "apache/kafka-native:4.1.1",
+        "my_image": "v8fg/kafka-native:4.1.1",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "",
+        "compose_tpl": "",
+        "current_update": "2025-12-19 00:45:53"
+    }
+]

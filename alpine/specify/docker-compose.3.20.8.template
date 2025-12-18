@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  ${v_container}:
+    image: ${v_my_image}
+    container_name: ${v_container}
+    restart: always
+    environment:
+      - TZ=${v_tz}

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  ${v_container}:
+    image: ${v_my_image}
+    container_name: ${v_container}
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      - TZ=${v_tz}
+    dns: 
+      - 8.8.8.8
+      - 8.8.4.4
+      - 114.114.114.114
+    stdin_open: true
+    tty: true 
+    command: [ "/bin/bash"]

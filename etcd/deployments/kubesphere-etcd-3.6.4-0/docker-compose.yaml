@@ -1,0 +1,14 @@
+services:
+  kubesphere-etcd-3.6.4-0:
+    image: v8fg/etcd:3.6.4-0
+    build: .
+    container_name: kubesphere-etcd-3.6.4-0
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+      ALLOW_NONE_AUTHENTICATION: yes
+      ETCD_ADVERTISE_CLIENT_URLS: 'http://etcd-server:12379'
+    ports:
+      - 12379:2379
+      - 12380:2380
+    command: [ "/bin/bash"]

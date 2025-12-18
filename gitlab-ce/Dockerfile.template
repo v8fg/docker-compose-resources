@@ -1,0 +1,27 @@
+# =================================================================
+# Stage 1: Base Image Initialization
+# Description: Dynamically defined via 'base_image' in images.json
+# =================================================================
+FROM ${v_base_image}
+
+# =================================================================
+# Stage 2: Metadata & Identification
+# Description: Sets organizational labels and maintainer info
+# =================================================================
+LABEL maintainer="278810732@qq.com" \
+      github="https://github.com/xwi88" \
+      group="https://github.com/v8fg"
+
+# =================================================================
+# Stage 3: Runtime Environment Setup
+# Description: Install essential system tools and configure 
+#              timezone-related packages for Alpine.
+# =================================================================
+# RUN apk add --no-cache tzdata bash
+
+# =================================================================
+# Stage 4: Environment Configuration
+# Description: Sets the system timezone using the 'tz' variable 
+#              from JSON (Default: Asia/Shanghai)
+# =================================================================
+ENV TZ=${v_tz}

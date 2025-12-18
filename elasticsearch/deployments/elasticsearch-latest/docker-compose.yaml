@@ -1,0 +1,9 @@
+services:
+  elasticsearch-latest:
+    image: v8fg/elasticsearch:latest
+    build: .
+    container_name: elasticsearch-latest
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    command: [ "/bin/bash"]

@@ -1,127 +1,28 @@
-# Docker Compose Resources
+# Global Deployment Summary
 
-> If you have any public images want to build , also can send email or issues, will deal it at my convenience, thks.
+### 📊 Execution Metrics
+- **📅 Sync Time:** 2025-12-19 00:45:53
+- **⏱️ Total Duration:** 140s
+- **📦 Total Images Scanned:** 35
+- **✅ Newly Processed:** 1
+- **⏩ Skipped:** 34
 
-## Image List
+### 📂 Service Status Overview
+| Directory | Service Name | Status | New Pushes |
+| :--- | :--- | :---: | :---: |
+| alpine | alpine | ⏩ No Change | 0 |
+| redis | redis | ⏩ No Change | 0 |
+| golang | golang | ⏩ No Change | 0 |
+| bash | bash | ⏩ No Change | 0 |
+| postgres | postgres | ⏩ No Change | 0 |
+| kafka | kafka | ✅ Done | 1 |
+| filebrowser | filebrowser | ⏩ No Change | 0 |
+| etcd | etcd | ⏩ No Change | 0 |
+| gitlab-ce | gitlab-ce | ⏩ No Change | 0 |
+| elasticsearch | elasticsearch | ⏩ No Change | 0 |
+| fluent-bit | fluent-bit | ⏩ No Change | 0 |
 
-- [demo](./demo/README.md)
-- [aerospike](./aerospike/README.md)
-- [alpine](./alpine/README.md)
-- [bash](./bash/README.md)
-- [busybox](./busybox/README.md)
-- [centos](./centos/README.md)
-- [elasticsearch](./elasticsearch/README.md)
-- [erlang](./erlang/README.md)
-- [etcd](./etcd/README.md)
-- [filebrowser](./filebrowser/README.md)
-- [flink](./flink/README.md)
-- [fluentd](./fluentd/README.md)
-- [gcc](./gcc/README.md)
-- [gitlab](./gitlab/README.md)
-- [golang](./golang/README.md)
-- [grafana](./grafana/README.md)
-- [influxdb](./influxdb/README.md)
-- [jenkins](./jenkins/README.md)
-- [julia](./julia/README.md)
-- [kafka](./kafka/README.md)
-- [kibana](./kibana/README.md)
-- [logstash](./logstash/README.md)
-- [mysql](./mysql/README.md)
-- [nats](./nats/README.md)
-- [nexus3](./nexus3/README.md)
-- [nginx](./nginx/README.md)
-- [node](./node/README.md)
-- [openjdk](./openjdk/README.md)
-- [php](./php/README.md)
-- [postgres](./postgres/README.md)
-- [prometheus](./prometheus/README.md)
-- [prometheus-gateway](./prometheus-gateway/README.md)
-- [pulsar](./pulsar/README.md)
-- [pyroscope](./pyroscope/README.md)
-- [python](./python/README.md)
-- [redis](./redis/README.md)
-- [registry](./registry/README.md)
-- [ruby](./ruby/README.md)
-- [rust](./rust/README.md)
-- [sonarqube](./sonarqube/README.md)
-- [swift](./swift/README.md)
-- [ubuntu](./ubuntu/README.md)
-- [zookeeper](./zookeeper/README.md)
-
-## Usage
-
->[reference](https://docs.docker.com/reference/)
-
-`docker pull [OPTIONS] NAME[:TAG|@DIGEST]`
-
-### copy file to multi dirs
-
-`find . -type d -d 1|grep -v '^\./\.\|scripts'|xargs -n 1 cp -v alpine/Makefile`
-
-## Project Structure
-
-```text
-┌── golang:                         golang related Dockerfile & docker-compose file
-    |__ latest:                     golang version latest image dir
-        |__ docker-compose.yml:     docker compose file, use to create and start container
-        |__ docker-version.sh:      version info for build and push docker image
-        |__ Dockerfile:             define the docker image
-    |__ latest-upx:                 golang latest version with upx
-    |__ Makefile:                   use command make to build, push and run docker images for golang
-|___xxx:                            xxx  related Dockerfile & docker-compose file
-|__ scripts:                        common scripts
-    |__ docker-build.sh:            docker image build script
-    |__ docker-clean.sh:            docker images clean, contains none for REPOSITORY or TAG
-    |__ docker-push.sh:             docker image push script
-    |__ docker-run.sh:              script for run the special version docker image
-|__ .gitignore:                     gitignore
-|__ Makefile:                       use command make to build and push latest docker image
-```
-
-## Docker and DockerCompose Set
-
-### [Docker Engine Install](https://docs.docker.com/engine/install/)
-
-#### Tip
-
-- `alpine 3.14+`, need `Docker version` **20.10.3+**
-
->**Recommendation**
-
-- Docker Desktop Version: **2.3.1.0** [pls watch subscription service agreement](https://www.docker.com/legal/docker-subscription-service-agreement)
-  - Pls use latest version, if install
-- Engine: 20.10.8+
-- Compose: 2.2.2
-- Go: 1.16.6+
-
-- [Install on CentOS](https://docs.docker.com/engine/install/centos/)
-- [Install binaries](https://docs.docker.com/engine/install/binaries/)
-  - [linux](https://download.docker.com/linux/static/stable/x86_64/)
-  - [mac](https://download.docker.com/mac/static/stable/x86_64/)
-
-#### Binaries Install
-
-```bash
-sudo cp docker/* /usr/bin/
-```
-
-### DockerCompose
-
-`brew install docker-compose`
-
-***docker-compose.yml*** `env priority`：
-
-- Compose file
-- Shell environment variables(use command source enable set)
-- Environment file
-- Dockerfile
-- Variable is not defined
-
-## mirrors site
-
-- [tuna](https://mirrors.tuna.tsinghua.edu.cn)
-- [bfsu](https://mirrors.bfsu.edu.cn/)
-- [ustc](http://mirrors.ustc.edu.cn/)
-- [aliyun](http://mirrors.aliyun.com/)
-- [163](http://mirrors.163.com/)
-- [zju](http://mirrors.zju.edu.cn/)
+### 🛠 Image Details
+| Service | Image | Status | Last Push | Update Result |
+| :--- | :--- | :---: | :--- | :--- |
+| kafka | `v8fg/kafka-native:4.1.1` | ✅ Done | 2025-12-19 00:45:53 | Update ✨ |

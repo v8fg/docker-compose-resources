@@ -1,0 +1,28 @@
+[
+    {
+        "service": "redis",
+        "version": "latest",
+        "container": "redis-latest",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "redis:latest",
+        "my_image": "v8fg/redis:latest",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "specify/Dockerfile.template",
+        "compose_tpl": "",
+        "current_update": "2025-12-18 01:17:39"
+    },
+    {
+        "service": "redis",
+        "version": "8.4.0",
+        "container": "redis-8.4.0",
+        "status": "done",
+        "remove_image": false,
+        "base_image": "redis:8.4.0",
+        "my_image": "v8fg/redis:8.4.0",
+        "tz": "Asia/Shanghai",
+        "dockerfile_tpl": "specify/Dockerfile.template",
+        "compose_tpl": "",
+        "current_update": "2025-12-18 01:17:51"
+    }
+]

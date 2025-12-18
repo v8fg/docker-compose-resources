@@ -1,0 +1,9 @@
+services:
+  fluent-bit-4.2.1-amd64:
+    image: v8fg/fluent-bit:4.2.1-amd64
+    container_name: fluent-bit-4.2.1-amd64
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 24224:24224

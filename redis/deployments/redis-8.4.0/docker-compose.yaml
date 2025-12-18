@@ -1,0 +1,14 @@
+services:
+  redis-8.4.0:
+    image: v8fg/redis:8.4.0
+    container_name: redis-8.4.0
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    # hostname: redis
+    ports:
+      - 16379:6379
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/redis:/data
+      #- ./conf/redis.conf:/etc/redis.conf

@@ -1,20 +1,13 @@
-# Docker Compose Resources
+# Service Summary: postgres
 
-## Images
+### 📊 Execution Metrics
+- **📅 Sync Time:** 2025-12-19 00:11:19
+- **📦 Total Images Scanned:** 2
+- **✅ Newly Processed:** 2
+- **⏩ Skipped:** 0
 
-- [x] [latest](./latest/Dockerfile)
-- [x] [15beta3-alpine](./14-alpine/Dockerfile)
-- [x] [14-alpine](./14-alpine/Dockerfile)
-- [x] [14.5-alpine](./14.5-alpine/Dockerfile)
-- [x] [13-alpine](./13-alpine/Dockerfile)
-- [x] [13.6-alpine](./13.6-alpine/Dockerfile)
-
-## Scripts
-
->ref: [Makefile](./Makefile)
-
-- build and push image: `make all [tag=latest]`
-- build image: `make build [tag=latest]`
-- push image: `make push [tag=latest]`
-- run container: `make run [tag=latest]`
-- list all tags: `make | make list`
+### 🛠 Image Details
+| Service | Image | Status | Last Push | Update Result |
+| :--- | :--- | :---: | :--- | :--- |
+| postgres | `v8fg/postgres:alpine3.23` | ✅ Done | 2025-12-19 00:11:19 | Update ✨ |
+| postgres | `v8fg/postgres:18.1-alpine3.23` | ✅ Done | 2025-12-19 00:11:19 | Update ✨ |

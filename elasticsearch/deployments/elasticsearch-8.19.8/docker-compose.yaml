@@ -1,0 +1,9 @@
+services:
+  elasticsearch-8.19.8:
+    image: v8fg/elasticsearch:8.19.8
+    build: .
+    container_name: elasticsearch-8.19.8
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    command: [ "/bin/bash"]

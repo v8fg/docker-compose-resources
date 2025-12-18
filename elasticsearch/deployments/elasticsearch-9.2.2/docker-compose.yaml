@@ -1,0 +1,9 @@
+services:
+  elasticsearch-9.2.2:
+    image: v8fg/elasticsearch:9.2.2
+    build: .
+    container_name: elasticsearch-9.2.2
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    command: [ "/bin/bash"]

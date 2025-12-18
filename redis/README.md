@@ -1,21 +1,13 @@
-# Docker Compose Resources
+# Service Summary: redis
 
-## Images
+### 📊 Execution Metrics
+- **📅 Sync Time:** 2025-12-18 01:17:51
+- **📦 Total Images Scanned:** 2
+- **✅ Newly Processed:** 2
+- **⏩ Skipped:** 0
 
-- [x] [latest](./latest/Dockerfile)
-- [x] [7.0.4](./7.0.4/Dockerfile)
-- [x] [7.0.4-alpine3.16](./7.0.4-alpine3.16/Dockerfile)
-- [x] [7](./7/Dockerfile)
-- [x] [7-alpine3.16](./7-alpine3.16/Dockerfile)
-- [x] [6.2-alpine](./6.2/Dockerfile)
-- [x] [6.2-alpine3.16](./6.2-alpine3.16/Dockerfile)
-
-## Scripts
-
->ref: [Makefile](./Makefile)
-
-- build and push image: `make all [tag=latest]`
-- build image: `make build [tag=latest]`
-- push image: `make push [tag=latest]`
-- run container: `make run [tag=latest]`
-- list all tags: `make | make list`
+### 🛠 Image Details
+| Service | Image | Status | Last Push | Update Result |
+| :--- | :--- | :---: | :--- | :--- |
+| redis | `v8fg/redis:latest` | ✅ Done | 2025-12-18 01:17:51 | Update ✨ |
+| redis | `v8fg/redis:8.4.0` | ✅ Done | 2025-12-18 01:17:51 | Update ✨ |

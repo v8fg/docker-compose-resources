@@ -1,0 +1,11 @@
+services:
+  ${v_container}:
+    image: ${v_my_image}
+    container_name: ${v_container}
+    restart: always
+    environment:
+      - TZ=${v_tz}
+    port:
+      - 6622:22
+      - 6680:80
+      - 6643:43

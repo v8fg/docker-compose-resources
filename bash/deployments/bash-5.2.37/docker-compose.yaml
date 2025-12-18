@@ -1,0 +1,7 @@
+services:
+  bash-5.2.37:
+    image: v8fg/bash:5.2.37
+    container_name: bash-5.2.37
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai

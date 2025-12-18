@@ -1,0 +1,11 @@
+services:
+  gitlab-ce:nightly:
+    image: v8fg/gitlab-ce:nightly
+    container_name: gitlab-ce:nightly
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    port:
+      - 6622:22
+      - 6680:80
+      - 6643:43

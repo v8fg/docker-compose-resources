@@ -1,0 +1,14 @@
+services:
+  ${v_container}:
+    image: ${v_my_image}
+    build: .
+    container_name: ${v_container}
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: ${v_tz}
+      ALLOW_NONE_AUTHENTICATION: yes
+      ETCD_ADVERTISE_CLIENT_URLS: 'http://etcd-server:12379'
+    ports:
+      - 12379:2379
+      - 12380:2380
+    command: [ "/bin/bash"]

@@ -1,0 +1,35 @@
+[
+  {
+    "service": "bash",
+    "version": "latest",
+    "container": "bash-latest",
+    "status": "done",
+    "remove_image": false,
+    "base_image": "bash:latest",
+    "my_image": "v8fg/bash:latest",
+    "tz": "Asia/Shanghai",
+    "current_update": "2025-12-17 19:50:27"
+  },
+  {
+    "service": "bash",
+    "version": "5.3.9",
+    "container": "bash-5.3.9",
+    "status": "done",
+    "remove_image": false,
+    "base_image": "bash:5.3.9",
+    "my_image": "v8fg/bash:5.3.9",
+    "tz": "Asia/Shanghai",
+    "current_update": "2025-12-17 19:22:15"
+  },
+  {
+    "service": "bash",
+    "version": "5.2.37",
+    "container": "bash-5.2.37",
+    "status": "done",
+    "remove_image": false,
+    "base_image": "bash:5.2.37",
+    "my_image": "v8fg/bash:5.2.37",
+    "tz": "Asia/Shanghai",
+    "current_update": "2025-12-17 19:24:16"
+  }
+]

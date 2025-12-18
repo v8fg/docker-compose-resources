@@ -1,0 +1,11 @@
+services:
+  gitlab-alpine3.21-bleeding:
+    image: v8fg/gitlab-runner:alpine3.21-bleeding
+    container_name: gitlab-alpine3.21-bleeding
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    port:
+      - 6622:22
+      - 6680:80
+      - 6643:43

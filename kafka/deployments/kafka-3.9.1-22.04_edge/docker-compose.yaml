@@ -1,0 +1,9 @@
+services:
+  kafka-3.9.1-22.04_edge:
+    image: v8fg/kafka:3.9.1-22.04_edge
+    container_name: kafka-3.9.1-22.04_edge
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 19092:9092

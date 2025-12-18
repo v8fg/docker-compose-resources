@@ -1,0 +1,9 @@
+services:
+  kafka-native-4.1.1:
+    image: v8fg/kafka-native:4.1.1
+    container_name: kafka-native-4.1.1
+    restart: always # no|on-failure[:max-retries]|always|unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 19092:9092

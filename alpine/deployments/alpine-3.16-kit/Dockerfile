@@ -1,0 +1,43 @@
+# =================================================================
+# PHASE 1: Base Environment Initialization
+# Description: Dynamically defines the base image using the 
+#              'v_base_image' variable from images.json.
+# =================================================================
+FROM alpine:3.16
+
+# =================================================================
+# PHASE 2: Metadata & Ownership
+# Description: Defines organizational metadata, maintainer details, 
+#              and source control links for image traceability.
+# =================================================================
+LABEL maintainer="278810732@qq.com" \
+      github="https://github.com/xwi88" \
+      group="https://github.com/v8fg" \
+      service_identity="alpine-3.16-kit"
+
+# =================================================================
+# PHASE 3: System Dependencies
+# Description: Installs essential runtime tools:
+#              - tzdata: Required for system clock synchronization.
+#              - bash: Essential for complex script execution.
+# =================================================================
+RUN apk add --no-cache tzdata bash
+
+# =================================================================
+# PHASE 4: Application Context (Optional)
+# Description: Placeholder for injecting application source code 
+#              from the local deployments context.
+# =================================================================
+# COPY . /app/
+
+# =================================================================
+# PHASE 5: Runtime Configuration
+# Description: Sets the container's operational timezone.
+#              Defaults to Asia/Shanghai provided by the pipeline.
+# =================================================================
+ENV TZ=Asia/Shanghai
+
+RUN mkdir -p /etc/udhcpc && echo "RESOLV_CONF=no" > /etc/udhcpc/udhcpc.conf
+# RUN cat /etc/resolv.conf | sed '/nameserver/ c\ nameserver 8.8.8.8' > /etc/resolv.conf
+# RUN echo 'nameserver 8.8.8.8' >> /etc/resolv.conf && echo 'nameserver 8.8.4.4' >> /etc/resolv.conf
+# RUN echo 'nameserver 114.114.114.114' >> /etc/resolv.conf

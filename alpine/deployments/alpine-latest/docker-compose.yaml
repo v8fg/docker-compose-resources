@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  alpine-latest:
+    image: v8fg/alpine:latest
+    container_name: alpine-latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai

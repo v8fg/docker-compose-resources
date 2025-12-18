@@ -8,3 +8,4 @@ pulsar/**/data/
 *.tar.gz
 .idea
 nohup.out
+*.log

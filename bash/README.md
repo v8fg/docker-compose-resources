@@ -1,16 +1,15 @@
-# Docker Compose Resources
+# BASH Registry
 
-## Images
+### 📊 Execution Metrics
+- **📅 Sync Time:** 2025-12-17 19:50:27
+- **⏱️ Total Duration:** 15s
+- **📦 Total Images Scanned:** 3
+- **✅ Newly Pushed:** 1
+- **⏩ Skipped:** 2
 
-- [x] [latest](./latest/Dockerfile)
-- [x] [5.1-alpine3.14](./5.1-alpine3.14/Dockerfile)
-
-## Scripts
-
->ref: [Makefile](./Makefile)
-
-- build and push image: `make all [tag=latest]`
-- build image: `make build [tag=latest]`
-- push image: `make push [tag=latest]`
-- run container: `make run [tag=latest]`
-- list all tags: `make | make list`
+### 🛠 Image Details
+| Service | Image | Status | Last Push | Update Result |
+| :--- | :--- | :---: | :--- | :--- |
+| bash | `v8fg/bash:latest` | ✅ Done | 2025-12-17 19:50:27 | Update ✨ |
+| bash | `v8fg/bash:5.3.9` | ✅ Done | 2025-12-17 19:24:16 | No Change |
+| bash | `v8fg/bash:5.2.37` | ✅ Done | 2025-12-17 19:24:16 | No Change |

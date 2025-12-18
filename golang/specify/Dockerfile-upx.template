@@ -1,0 +1,27 @@
+# --- Section 1: Environment Provisioning & Metadata ---
+# Utilize build-time arguments to enable dynamic base image selection
+FROM ${v_base_image}
+
+# Define image metadata for ownership, context, and repository traceability
+LABEL author="xwi88" \
+      type="go" \
+      maintainer="278810732@qq.com" \
+      github="https://github.com/xwi88" \
+      group="https://github.com/v8fg"
+
+# --- Section 2: Artifact Configuration ---
+# Specify UPX version for binary compression (omit 'v' prefix)
+# Documentation: https://github.com/upx/upx/releases
+ARG UPX_VERSION=5.0.2
+
+# Retrieve UPX toolchain for executable size optimization
+ADD https://github.com/upx/upx/releases/download/v${UPX_VERSION}/upx-${UPX_VERSION}-amd64_linux.tar.xz /tmp/upx.tar.xz
+
+# --- Section 3: System Hardening & Toolchain Installation ---
+# 1. Install core build utilities and timezone data with no-cache for layer optimization
+# 2. Extract UPX binary via stream redirection to avoid full tarball expansion
+# 3. Finalize permissions and purge temporary assets to minimize image footprint
+RUN apk add --no-cache tzdata git make bash && \
+    tar -xJOf /tmp/upx.tar.xz upx-${UPX_VERSION}-amd64_linux/upx > /bin/upx && \
+    chmod +x /bin/upx && \
+    rm /tmp/upx.tar.xz
